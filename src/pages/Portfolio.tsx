@@ -34,7 +34,7 @@ export default function Portfolio() {
           link: ''
         },
         after: {
-          items: ['Professional gym website', 'Facility showcase sections', 'Clear membership CTA', 'Fast Performance', 'Mobile Responsive', 'Membership Focus'],
+          items: ['Professional gym website', 'Facility showcase sections', 'Clear membership CTA', 'Fast Performance', 'Mobile Responsive', 'Membership Focus', 'Bonus : Special Personalized Ai Assistant Chatbot'],
           link: 'https://waofitnessgymchandigarh.vercel.app/'
         }
       }
@@ -51,7 +51,7 @@ export default function Portfolio() {
           link: ''
         },
         after: {
-          items: ['Professional gym website', 'Facility & program sections', 'Clear membership CTA', 'Fast Performance', 'Mobile Responsive', 'Membership Focus'],
+          items: ['Professional gym website', 'Facility & program sections', 'Clear membership CTA', 'Fast Performance', 'Mobile Responsive', 'Membership Focus', 'Bonus : Special Personalized Ai Assistant Chatbot'],
           link: 'https://alligator-fitness-gym-new-delhi.vercel.app/'
         }
       }
@@ -146,7 +146,17 @@ export default function Portfolio() {
                           <ul className="space-y-2 mb-4">
                             {(project as any).comparison.after.items.map((item: string, idx: number) => (
                               <li key={idx} className="text-sm text-zinc-600 flex items-start gap-2">
-                                <span className="text-emerald-500 mt-1">✓</span> {item}
+                                <span className="text-emerald-500 mt-1">✓</span>
+                                <span>
+                                  {item.startsWith('Bonus') ? (
+                                    <>
+                                      <span className="font-bold text-zinc-900">Bonus</span>
+                                      {item.substring(5)}
+                                    </>
+                                  ) : (
+                                    item
+                                  )}
+                                </span>
                               </li>
                             ))}
                           </ul>

@@ -28,7 +28,7 @@ export default function Blog() {
             <div key={post.id}>
               <SpotlightCard className="p-8 flex flex-col h-full">
                 <div className="flex items-center justify-between mb-6">
-                  <span className="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full">
+                  <span className="inline-flex items-center text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full whitespace-nowrap">
                     {post.category}
                   </span>
                   <span className="text-xs text-zinc-500 font-medium flex items-center gap-1">
