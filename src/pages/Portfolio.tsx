@@ -8,7 +8,7 @@ export default function Portfolio() {
     {
       id: 1,
       title: 'FCG Landscaping — Website Redesign',
-      category: 'UI/UX & Development',
+      category: 'Landscaping Website',
       desc: 'Modern redesign concept focused on improving lead generation, user experience, and visual credibility for the landscaping business.',
       image: 'https://i.ibb.co/RTz95yT6/image.png',
       comparison: {
@@ -78,8 +78,19 @@ export default function Portfolio() {
 
         <div className="space-y-32 mb-32">
           {projects.map((project, i) => (
-            <div key={project.id}>
-              <SpotlightCard className="p-0 flex flex-col h-full" maxRotation={5}>
+            <div key={project.id} className="relative">
+              {/* Recent Project Badge */}
+              {i === 0 && (
+                <div className="absolute -top-4 -left-4 md:-top-5 md:-left-5 z-30 flex items-center gap-2 bg-blue-600 px-4 py-2 rounded-full shadow-xl border border-blue-500">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+                  </span>
+                  <span className="text-[10px] font-bold text-white uppercase tracking-wide">Recent Project</span>
+                </div>
+              )}
+
+              <SpotlightCard className="p-0 flex flex-col h-full relative" maxRotation={5}>
                 <div className={`flex flex-col ${i % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center p-8`}>
                   <div className="w-full lg:w-1/2">
                     <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-zinc-100 border border-zinc-200 shadow-xl relative group">

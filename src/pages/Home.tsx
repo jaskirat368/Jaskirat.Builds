@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform, animate, useInView } from 'motion/reac
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SpotlightCard from '../components/SpotlightCard';
+import FlipWord from '../components/FlipWord';
 import { ArrowRight, ArrowUpRight, CheckCircle2, BarChart3, Zap, LayoutTemplate, Settings, RefreshCcw, ShoppingCart } from 'lucide-react';
 
 export default function Home() {
@@ -104,7 +105,7 @@ export default function Home() {
             variants={itemVariants}
             className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter text-white leading-[1.05] mb-8"
           >
-            High-Converting <br className="hidden md:block" />
+            High-<FlipWord /> <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-zinc-400 drop-shadow-sm">
               Websites Built for Growth.
             </span>
