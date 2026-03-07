@@ -5,15 +5,15 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
   const [exit, setExit] = useState(false);
 
   useEffect(() => {
-    // Start exit animation after 2.5 seconds
+    // Start exit animation after 4 seconds (increased from 2.5s)
     const timer = setTimeout(() => {
       setExit(true);
-    }, 2500);
+    }, 4000);
 
-    // Call onComplete after exit animation finishes (2.5s + 0.8s slide)
+    // Call onComplete after exit animation finishes (4s + 0.8s slide)
     const completeTimer = setTimeout(() => {
       onComplete();
-    }, 3300);
+    }, 4800);
 
     return () => {
       clearTimeout(timer);
@@ -94,6 +94,16 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
           transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
           className="h-[1px] bg-gradient-to-r from-transparent via-blue-600 to-transparent mt-4 w-full max-w-[200px] md:max-w-[400px]"
         />
+
+        {/* Hint Text */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.8 }}
+          className="mt-6 font-mono text-[10px] md:text-xs text-white/20 tracking-widest uppercase"
+        >
+          Hint - Feel free to Hover on Cards if on PC
+        </motion.div>
       </div>
 
       {/* Decorative Code Elements */}
