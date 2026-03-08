@@ -98,7 +98,7 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
             </span>
-            <span className="text-xs font-medium text-blue-200 tracking-wide uppercase">Available for new projects</span>
+            <span className="text-xs font-medium text-blue-200 tracking-wide uppercase">Jaskirat - Freelance Web Developer</span>
           </motion.div>
           
           <motion.h1
@@ -115,7 +115,7 @@ export default function Home() {
             variants={itemVariants}
             className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-12 font-medium tracking-tight"
           >
-            Modern · Fast · Strategic · Performance-Driven
+            Professional Web Developer & UI/UX Designer specializing in custom business websites.
           </motion.p>
           
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -175,11 +175,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-6">
-              Most Websites Don't Convert. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Here's Why.</span>
+              Why Hire a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Professional Web Developer?</span>
             </h2>
             <p className="text-lg text-zinc-600">
-              A beautiful website is useless if it doesn't generate revenue. If your current site is underperforming, it's likely suffering from one of these critical flaws.
+              A beautiful website is useless if it doesn't generate revenue. As an expert <strong className="font-semibold text-zinc-900">freelance web designer</strong>, I fix the critical flaws that hold businesses back.
             </p>
           </div>
 
@@ -262,11 +261,11 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-10">
             <div className="max-w-3xl">
               <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-zinc-950 mb-6">
-                Digital Architecture for <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Modern Businesses.</span>
+                Premium Web Design & <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Development Services.</span>
               </h2>
               <p className="text-xl text-zinc-600 max-w-2xl font-medium">
-                Comprehensive solutions focused on performance, aesthetics, and measurable ROI.
+                From <strong className="text-zinc-900">custom ecommerce websites</strong> to <strong className="text-zinc-900">landing page design</strong>, I deliver comprehensive solutions focused on ROI.
               </p>
             </div>
             <Link to="/services" className="group flex items-center gap-3 px-6 py-3 rounded-full bg-zinc-950 text-white font-semibold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
@@ -279,13 +278,13 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: <LayoutTemplate className="w-8 h-8" />, title: 'UI/UX Design', desc: 'Intuitive, user-centric interfaces that guide visitors to conversion.', span: 'lg:col-span-2' },
-              { icon: <Settings className="w-8 h-8" />, title: 'Development', desc: 'Clean, scalable code built on modern tech stacks for maximum reliability.', span: '' },
-              { icon: <ShoppingCart className="w-8 h-8" />, title: 'Ecommerce', desc: 'High-performance storefronts optimized for average order value and checkout speed.', span: '' },
-              { icon: <RefreshCcw className="w-8 h-8" />, title: 'Redesign', desc: 'Strategic overhauls of underperforming assets to align with current goals.', span: '' },
-              { icon: <Zap className="w-8 h-8" />, title: 'Optimization', desc: 'Technical SEO and speed enhancements to dominate search rankings.', span: '' },
-              { icon: <BarChart3 className="w-8 h-8" />, title: 'Maintenance', desc: 'Ongoing support to ensure security, speed, and continuous improvement.', span: '' },
-              { icon: <Settings className="w-8 h-8" />, title: 'Automation', desc: 'Workflow integrations to save time and streamline your business operations.', span: 'lg:col-span-2' },
+              { icon: <LayoutTemplate className="w-8 h-8" />, title: 'UI/UX Web Design', desc: 'Intuitive, user-centric interfaces that guide visitors to conversion.', span: 'lg:col-span-2' },
+              { icon: <Settings className="w-8 h-8" />, title: 'Custom Web Development', desc: 'Clean, scalable code built on modern tech stacks for maximum reliability.', span: '' },
+              { icon: <ShoppingCart className="w-8 h-8" />, title: 'Ecommerce Development', desc: 'High-performance Shopify & custom stores optimized for sales.', span: '' },
+              { icon: <RefreshCcw className="w-8 h-8" />, title: 'Website Redesign', desc: 'Strategic overhauls of underperforming assets to align with current goals.', span: '' },
+              { icon: <Zap className="w-8 h-8" />, title: 'SEO Optimization', desc: 'Technical SEO and speed enhancements to dominate search rankings.', span: '' },
+              { icon: <BarChart3 className="w-8 h-8" />, title: 'Website Maintenance', desc: 'Ongoing support to ensure security, speed, and continuous improvement.', span: '' },
+              { icon: <Settings className="w-8 h-8" />, title: 'Business Automation', desc: 'Workflow integrations to save time and streamline your business operations.', span: 'lg:col-span-2' },
             ].map((service, i) => (
               <div key={i}>
                 <SpotlightCard 
@@ -492,6 +491,66 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
+
+      {/* SEO CONTENT SECTION */}
+      <section className="py-24 px-6 md:px-12 bg-zinc-50 border-t border-zinc-200">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-zinc-950 mb-6">
+              Expert Web Development & Design Services
+            </h2>
+            <p className="text-zinc-600 leading-relaxed">
+              Looking for a <strong className="text-zinc-900">professional web developer</strong> or <strong className="text-zinc-900">freelance web designer</strong> who understands business growth? 
+              I specialize in building high-performance, custom websites that drive results. Whether you need a <strong className="text-zinc-900">Shopify ecommerce store</strong>, 
+              a <strong className="text-zinc-900">business website builder</strong>, or a <strong className="text-zinc-900">full stack developer for hire</strong>, 
+              I deliver pixel-perfect solutions tailored to your brand.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-xl font-bold text-zinc-900 mb-4">Why Hire a Professional Web Developer?</h3>
+              <p className="text-zinc-600 text-sm leading-relaxed mb-6">
+                In today's digital age, a generic template isn't enough. As an <strong className="text-zinc-900">expert web developer</strong>, I create <strong className="text-zinc-900">custom business websites</strong> that are fast, secure, and SEO-optimized. 
+                Unlike a standard <strong className="text-zinc-900">website designer</strong>, I focus on the entire ecosystem—from <strong className="text-zinc-900">front end development</strong> to backend scalability. 
+                If you're searching for a <strong className="text-zinc-900">website developer near me</strong> or a <strong className="text-zinc-900">remote freelance web developer</strong>, 
+                I offer global services with a personal touch.
+              </p>
+              
+              <h3 className="text-xl font-bold text-zinc-900 mb-4">Custom Ecommerce & Shopify Solutions</h3>
+              <p className="text-zinc-600 text-sm leading-relaxed">
+                Need an <strong className="text-zinc-900">online store developer</strong>? I am a specialized <strong className="text-zinc-900">Shopify website developer</strong> and <strong className="text-zinc-900">ecommerce web designer</strong>. 
+                I build <strong className="text-zinc-900">custom ecommerce websites</strong> that maximize conversion rates. From product pages to checkout flows, every element is designed to sell. 
+                Don't settle for a basic <strong className="text-zinc-900">ecommerce website builder</strong>—hire a <strong className="text-zinc-900">professional web design service</strong> that scales with your business.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-bold text-zinc-900 mb-4">Freelance Web Designer for Startups & Small Businesses</h3>
+              <p className="text-zinc-600 text-sm leading-relaxed mb-6">
+                I am the go-to <strong className="text-zinc-900">startup website developer</strong> and <strong className="text-zinc-900">small business website developer</strong> for brands that want to stand out. 
+                My <strong className="text-zinc-900">UI UX web designer</strong> approach ensures your site is not just beautiful, but intuitive. 
+                Whether you need a <strong className="text-zinc-900">landing page designer</strong> or a complete <strong className="text-zinc-900">website redesign service</strong>, 
+                I provide <strong className="text-zinc-900">affordable web developer</strong> packages without compromising on quality.
+              </p>
+
+              <h3 className="text-xl font-bold text-zinc-900 mb-4">Global Web Development Services</h3>
+              <p className="text-zinc-600 text-sm leading-relaxed">
+                As a <strong className="text-zinc-900">top web developer</strong> and <strong className="text-zinc-900">international web designer</strong>, I work with clients worldwide. 
+                My <strong className="text-zinc-900">remote web developer</strong> services ensure seamless communication and timely delivery, no matter your time zone. 
+                If you're looking to <strong className="text-zinc-900">find a web developer</strong> who is committed to your success, look no further. 
+                I am Jaskirat, your partner for <strong className="text-zinc-900">modern website design</strong> and <strong className="text-zinc-900">web application development</strong>.
+              </p>
+            </div>
+          </div>
+          
+          <div className="mt-12 pt-12 border-t border-zinc-200 text-center">
+            <p className="text-xs text-zinc-400 uppercase tracking-widest font-medium">
+              Jaskirat Web Developer • Freelance Web Designer • Shopify Developer • Full Stack Developer
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* FINAL CTA */}
       <motion.section 
