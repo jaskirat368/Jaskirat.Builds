@@ -3,7 +3,7 @@ import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SpotlightCard from '../components/SpotlightCard';
 import FlipWord from '../components/FlipWord';
-import { ArrowRight, ArrowUpRight, CheckCircle2, BarChart3, Zap, LayoutTemplate, Settings, RefreshCcw, ShoppingCart } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, CheckCircle2, BarChart3, Zap, LayoutTemplate, Settings, RefreshCcw, ShoppingCart, Globe, Rocket, Code2 } from 'lucide-react';
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -175,10 +175,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-6">
-              Why Hire a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Professional Web Developer?</span>
+              Most Websites Don't Convert. <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Here's Why.</span>
             </h2>
             <p className="text-lg text-zinc-600">
-              A beautiful website is useless if it doesn't generate revenue. As an expert <strong className="font-semibold text-zinc-900">freelance web designer</strong>, I fix the critical flaws that hold businesses back.
+              A beautiful website is useless if it doesn't generate revenue. If your current site is underperforming, it's likely suffering from one of these critical flaws.
             </p>
           </div>
 
@@ -493,64 +494,82 @@ export default function Home() {
       </motion.section>
 
       {/* SEO CONTENT SECTION */}
-      <section className="py-24 px-6 md:px-12 bg-zinc-50 border-t border-zinc-200">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-950 mb-6">
-              Expert Web Development & Design Services
+      <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={revealVariants}
+        className="py-32 px-6 md:px-12 bg-zinc-950 relative overflow-hidden border-t border-zinc-900"
+      >
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-zinc-950 via-transparent to-zinc-950 pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+              Expert Web Development <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Designed for Growth.</span>
             </h2>
-            <p className="text-zinc-600 leading-relaxed">
-              Looking for a <strong className="text-zinc-900">professional web developer</strong> or <strong className="text-zinc-900">freelance web designer</strong> who understands business growth? 
-              I specialize in building high-performance, custom websites that drive results. Whether you need a <strong className="text-zinc-900">Shopify ecommerce store</strong>, 
-              a <strong className="text-zinc-900">business website builder</strong>, or a <strong className="text-zinc-900">full stack developer for hire</strong>, 
-              I deliver pixel-perfect solutions tailored to your brand.
+            <p className="text-lg text-zinc-400 leading-relaxed">
+              Looking for a <strong className="text-white font-semibold">professional web developer</strong> or <strong className="text-white font-semibold">freelance web designer</strong>? 
+              I deliver pixel-perfect, high-performance solutions tailored to your brand's success.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-xl font-bold text-zinc-900 mb-4">Why Hire a Professional Web Developer?</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed mb-6">
-                In today's digital age, a generic template isn't enough. As an <strong className="text-zinc-900">expert web developer</strong>, I create <strong className="text-zinc-900">custom business websites</strong> that are fast, secure, and SEO-optimized. 
-                Unlike a standard <strong className="text-zinc-900">website designer</strong>, I focus on the entire ecosystem—from <strong className="text-zinc-900">front end development</strong> to backend scalability. 
-                If you're searching for a <strong className="text-zinc-900">website developer near me</strong> or a <strong className="text-zinc-900">remote freelance web developer</strong>, 
-                I offer global services with a personal touch.
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <SpotlightCard className="p-8 md:p-10 bg-zinc-900/50 border-zinc-800/50 hover:bg-zinc-900 hover:border-blue-500/30 transition-colors group">
+              <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Code2 className="w-6 h-6 text-blue-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-4">Why Hire a Professional Developer?</h3>
+              <p className="text-zinc-400 leading-relaxed text-sm">
+                In today's digital age, a generic template isn't enough. As an <strong className="text-zinc-200">expert web developer</strong>, I create <strong className="text-zinc-200">custom business websites</strong> that are fast, secure, and SEO-optimized. 
+                Unlike a standard <strong className="text-zinc-200">website designer</strong>, I focus on the entire ecosystem—from <strong className="text-zinc-200">front end development</strong> to backend scalability.
               </p>
-              
-              <h3 className="text-xl font-bold text-zinc-900 mb-4">Custom Ecommerce & Shopify Solutions</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">
-                Need an <strong className="text-zinc-900">online store developer</strong>? I am a specialized <strong className="text-zinc-900">Shopify website developer</strong> and <strong className="text-zinc-900">ecommerce web designer</strong>. 
-                I build <strong className="text-zinc-900">custom ecommerce websites</strong> that maximize conversion rates. From product pages to checkout flows, every element is designed to sell. 
-                Don't settle for a basic <strong className="text-zinc-900">ecommerce website builder</strong>—hire a <strong className="text-zinc-900">professional web design service</strong> that scales with your business.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="text-xl font-bold text-zinc-900 mb-4">Freelance Web Designer for Startups & Small Businesses</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed mb-6">
-                I am the go-to <strong className="text-zinc-900">startup website developer</strong> and <strong className="text-zinc-900">small business website developer</strong> for brands that want to stand out. 
-                My <strong className="text-zinc-900">UI UX web designer</strong> approach ensures your site is not just beautiful, but intuitive. 
-                Whether you need a <strong className="text-zinc-900">landing page designer</strong> or a complete <strong className="text-zinc-900">website redesign service</strong>, 
-                I provide <strong className="text-zinc-900">affordable web developer</strong> packages without compromising on quality.
-              </p>
+            </SpotlightCard>
 
-              <h3 className="text-xl font-bold text-zinc-900 mb-4">Global Web Development Services</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">
-                As a <strong className="text-zinc-900">top web developer</strong> and <strong className="text-zinc-900">international web designer</strong>, I work with clients worldwide. 
-                My <strong className="text-zinc-900">remote web developer</strong> services ensure seamless communication and timely delivery, no matter your time zone. 
-                If you're looking to <strong className="text-zinc-900">find a web developer</strong> who is committed to your success, look no further. 
-                I am Jaskirat, your partner for <strong className="text-zinc-900">modern website design</strong> and <strong className="text-zinc-900">web application development</strong>.
+            <SpotlightCard className="p-8 md:p-10 bg-zinc-900/50 border-zinc-800/50 hover:bg-zinc-900 hover:border-indigo-500/30 transition-colors group">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <ShoppingCart className="w-6 h-6 text-indigo-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-4">Custom Ecommerce Solutions</h3>
+              <p className="text-zinc-400 leading-relaxed text-sm">
+                Need an <strong className="text-zinc-200">online store developer</strong>? I am a specialized <strong className="text-zinc-200">Shopify website developer</strong> and <strong className="text-zinc-200">ecommerce web designer</strong>. 
+                I build <strong className="text-zinc-200">custom ecommerce websites</strong> that maximize conversion rates. Don't settle for basic builders—hire a <strong className="text-zinc-200">professional web design service</strong> that scales.
               </p>
-            </div>
+            </SpotlightCard>
+
+            <SpotlightCard className="p-8 md:p-10 bg-zinc-900/50 border-zinc-800/50 hover:bg-zinc-900 hover:border-purple-500/30 transition-colors group">
+              <div className="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Rocket className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-4">For Startups & Small Businesses</h3>
+              <p className="text-zinc-400 leading-relaxed text-sm">
+                I am the go-to <strong className="text-zinc-200">startup website developer</strong> and <strong className="text-zinc-200">small business website developer</strong> for brands that want to stand out. 
+                My <strong className="text-zinc-200">UI UX web designer</strong> approach ensures your site is intuitive. Whether you need a <strong className="text-zinc-200">landing page designer</strong> or a complete <strong className="text-zinc-200">website redesign</strong>, I provide affordable packages without compromising quality.
+              </p>
+            </SpotlightCard>
+
+            <SpotlightCard className="p-8 md:p-10 bg-zinc-900/50 border-zinc-800/50 hover:bg-zinc-900 hover:border-emerald-500/30 transition-colors group">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Globe className="w-6 h-6 text-emerald-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-4">Global Web Development Services</h3>
+              <p className="text-zinc-400 leading-relaxed text-sm">
+                As a <strong className="text-zinc-200">top web developer</strong> and <strong className="text-zinc-200">international web designer</strong>, I work with clients worldwide. 
+                My <strong className="text-zinc-200">remote web developer</strong> services ensure seamless communication. If you're looking to <strong className="text-zinc-200">find a web developer</strong> committed to your success, look no further.
+              </p>
+            </SpotlightCard>
           </div>
           
-          <div className="mt-12 pt-12 border-t border-zinc-200 text-center">
-            <p className="text-xs text-zinc-400 uppercase tracking-widest font-medium">
+          <div className="mt-16 pt-8 border-t border-white/5 text-center">
+            <p className="text-xs text-zinc-500 uppercase tracking-widest font-medium">
               Jaskirat Web Developer • Freelance Web Designer • Shopify Developer • Full Stack Developer
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* FINAL CTA */}
       <motion.section 
