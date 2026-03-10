@@ -50,7 +50,13 @@ export default function SpotlightCard({
   };
 
   const content = (
-    <>
+    <div
+      className={`group block relative h-full w-full overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-50 transition-all duration-200 ease-out hover:bg-white ${className}`}
+      style={{
+        transform,
+        transformStyle: "preserve-3d" as const,
+      }}
+    >
       {/* Spotlight Background Glow - More intense, smaller radius */}
       <div
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 z-0"
@@ -93,18 +99,14 @@ export default function SpotlightCard({
       <div className="relative z-20 h-full">
         {children}
       </div>
-    </>
+    </div>
   );
 
-  const commonProps = {
+  const wrapperProps = {
     onMouseMove: handleMouseMove,
     onMouseEnter: handleMouseEnter,
     onMouseLeave: handleMouseLeave,
-    className: `group block relative overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-50 transition-all duration-200 ease-out hover:bg-white ${className}`,
-    style: {
-      transform,
-      transformStyle: "preserve-3d" as const,
-    }
+    className: "relative block h-full w-full",
   };
 
   if (to) {
@@ -112,7 +114,7 @@ export default function SpotlightCard({
       <Link
         ref={divRef as React.RefObject<HTMLAnchorElement>}
         to={to}
-        {...commonProps}
+        {...wrapperProps}
       >
         {content}
       </Link>
@@ -122,7 +124,7 @@ export default function SpotlightCard({
   return (
     <div
       ref={divRef}
-      {...commonProps}
+      {...wrapperProps}
     >
       {content}
     </div>

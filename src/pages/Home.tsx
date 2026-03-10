@@ -98,7 +98,7 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
             </span>
-            <span className="text-xs font-medium text-blue-200 tracking-wide uppercase">Jaskirat - Freelance Web Developer</span>
+            <span className="text-xs font-medium text-blue-200 tracking-wide uppercase">Jaskirat - Professional Web Designer / Web Developer</span>
           </motion.div>
           
           <motion.h1
