@@ -37,7 +37,6 @@ export default function Home() {
 
   return (
     <div className="w-full overflow-hidden">
-      {/* HERO SECTION */}
       <section className="relative min-h-[100vh] flex items-center justify-center pt-32 pb-20 px-6 md:px-12 bg-zinc-950 z-20">
         {/* Static Background Image */}
         <div className="absolute inset-0 overflow-hidden">
@@ -47,22 +46,17 @@ export default function Home() {
             className="w-full h-full object-cover opacity-40"
             referrerPolicy="no-referrer"
           />
-          {/* Dark Overlay for Text Contrast */}
           <div className="absolute inset-0 bg-zinc-950/10 pointer-events-none" />
           
-          {/* 3D Animated Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ perspective: "1000px" }}>
-            {/* Floating Cube - Left */}
             <div className="absolute top-1/4 left-[10%] opacity-60">
               <Cube3D size={60} className="border border-white/20 bg-white/5 shadow-[0_0_30px_rgba(255,255,255,0.1)]" />
             </div>
 
-            {/* Floating Cube - Right */}
             <div className="absolute bottom-1/3 right-[10%] opacity-60">
               <Cube3D size={80} reverse className="border border-white/20 bg-white/5 shadow-[0_0_30px_rgba(255,255,255,0.1)]" />
             </div>
 
-            {/* Floating Ring - Top Right */}
             <motion.div
               animate={{ rotateX: [0, 360], rotateY: [0, 180] }}
               transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
@@ -70,7 +64,6 @@ export default function Home() {
               style={{ transformStyle: "preserve-3d" }}
             />
 
-            {/* Floating Ring - Bottom Left */}
             <motion.div
               animate={{ rotateX: [0, -360], rotateY: [0, -180] }}
               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
@@ -78,7 +71,6 @@ export default function Home() {
               style={{ transformStyle: "preserve-3d" }}
             />
             
-            {/* Glowing Orbs */}
             <motion.div 
               animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -525,7 +517,7 @@ export default function Home() {
               <h3 className="text-xl font-bold text-white mb-4">Why Hire a Professional Developer?</h3>
               <p className="text-zinc-400 leading-relaxed text-sm">
                 In today's digital age, a generic template isn't enough. As an <strong className="text-zinc-200">expert web developer</strong>, I create <strong className="text-zinc-200">custom business websites</strong> that are fast, secure, and SEO-optimized. 
-                Unlike a standard <strong className="text-zinc-200">website designer</strong>, I focus on the entire ecosystem—from <strong className="text-zinc-200">front end development</strong> to backend scalability.
+                Unlike a standard <strong className="text-zinc-200">website designer</strong>, I focus on the entire ecosystem—from <strong className="text-zinc-200">front end development</strong> to backend scalability. My approach ensures that every line of code serves a purpose, contributing to a seamless user experience and robust technical foundation.
               </p>
             </SpotlightCard>
 
@@ -536,7 +528,7 @@ export default function Home() {
               <h3 className="text-xl font-bold text-white mb-4">Custom Ecommerce Solutions</h3>
               <p className="text-zinc-400 leading-relaxed text-sm">
                 Need an <strong className="text-zinc-200">online store developer</strong>? I am a specialized <strong className="text-zinc-200">Shopify website developer</strong> and <strong className="text-zinc-200">ecommerce web designer</strong>. 
-                I build <strong className="text-zinc-200">custom ecommerce websites</strong> that maximize conversion rates. Don't settle for basic builders—hire a <strong className="text-zinc-200">professional web design service</strong> that scales.
+                I build <strong className="text-zinc-200">custom ecommerce websites</strong> that maximize conversion rates. Don't settle for basic builders—hire a <strong className="text-zinc-200">professional web design service</strong> that scales. I integrate advanced analytics and marketing tools to help you track performance and grow your revenue effectively from day one.
               </p>
             </SpotlightCard>
 
@@ -558,20 +550,37 @@ export default function Home() {
               <h3 className="text-xl font-bold text-white mb-4">Global Web Development Services</h3>
               <p className="text-zinc-400 leading-relaxed text-sm">
                 As a <strong className="text-zinc-200">top web developer</strong> and <strong className="text-zinc-200">international web designer</strong>, I work with clients worldwide. 
-                My <strong className="text-zinc-200">remote web developer</strong> services ensure seamless communication. If you're looking to <strong className="text-zinc-200">find a web developer</strong> committed to your success, look no further.
+                My <strong className="text-zinc-200">remote web developer</strong> services ensure seamless communication. If you're looking to <strong className="text-zinc-200">find a web developer</strong> committed to your success, look no further. I leverage modern collaboration tools to bridge the gap across time zones, delivering high-quality results regardless of your location.
               </p>
             </SpotlightCard>
           </div>
-          
-          <div className="mt-16 pt-8 border-t border-white/5 text-center">
-            <p className="text-xs text-zinc-500 uppercase tracking-widest font-medium">
-              Jaskirat Web Developer • Freelance Web Designer • Shopify Developer • Full Stack Developer
-            </p>
+
+          <div className="mt-24 bg-zinc-900/30 rounded-3xl p-8 md:p-16 border border-zinc-800/50">
+            <h3 className="text-2xl md:text-4xl font-bold text-white mb-8 text-center">A Strategic Approach to Digital Excellence</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div>
+                <h4 className="text-blue-400 font-semibold mb-4 text-lg">Discovery & Strategy</h4>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Every project begins with a deep dive into your business objectives. We analyze your target audience, competitors, and market trends to create a roadmap that aligns with your long-term goals. This ensures that the final product is not just a website, but a strategic asset. Our discovery phase involves stakeholder interviews and data analysis to uncover hidden opportunities for growth.
+                </p>
+              </div>
+              <div>
+                <h4 className="text-indigo-400 font-semibold mb-4 text-lg">Design & Development</h4>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Our design process focuses on user-centricity and brand consistency. We translate complex requirements into intuitive interfaces, followed by rigorous development using modern technologies like React and TypeScript. This combination guarantees both aesthetic appeal and technical reliability. We prioritize performance and scalability, ensuring your site can grow alongside your business.
+                </p>
+              </div>
+              <div>
+                <h4 className="text-purple-400 font-semibold mb-4 text-lg">Optimization & Launch</h4>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Before going live, we perform extensive testing across devices and browsers. We optimize for speed, SEO, and accessibility to ensure your site performs at its peak. Post-launch, we provide ongoing support to help you navigate the evolving digital landscape and maintain your competitive edge. Our commitment to excellence means we're always looking for ways to improve your site's performance.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </motion.section>
 
-      {/* FINAL CTA */}
       <motion.section 
         initial="hidden"
         whileInView="visible"

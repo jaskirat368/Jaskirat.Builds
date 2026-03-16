@@ -48,8 +48,8 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-zinc-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-        <p>&copy; {new Date().getFullYear()} Jaskirat Builds. All rights reserved.</p>
-        <p>Designed to turn traffic into customers.</p>
+        <p>Copyright &copy; 2024-2026 Jaskirat Builds. All rights reserved. Registered Digital Agency.</p>
+        <p>Expertly crafted digital experiences designed to turn traffic into loyal customers through strategic design and performance optimization.</p>
       </div>
     </footer>
   );

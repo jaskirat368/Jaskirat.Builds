@@ -45,14 +45,12 @@ export default function Navbar() {
             : 'bg-zinc-950/60 backdrop-blur-md border border-white/5 shadow-2xl'
         )}
       >
-        {/* Creative Glow Effect behind the navbar */}
         <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl" />
 
         <Link to="/" className="text-lg md:text-xl font-bold tracking-tight text-white flex items-center gap-2 z-50">
           <span>JASKIRAT<span className="text-blue-500">.</span>BUILDS</span>
         </Link>
 
-        {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
@@ -91,7 +89,6 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
           className="lg:hidden relative z-50 p-2 text-white bg-white/10 backdrop-blur-md border border-white/10 rounded-full hover:bg-white/20 transition-colors shadow-sm"
           onClick={() => setIsOpen(!isOpen)}
@@ -111,7 +108,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Nav Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

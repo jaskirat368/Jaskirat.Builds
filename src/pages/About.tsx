@@ -52,20 +52,16 @@ export default function About() {
             <h2 className="text-3xl font-bold text-zinc-950 mb-6">My Philosophy</h2>
             <div className="space-y-6 text-lg text-zinc-600 leading-relaxed">
               <p>
-                In today’s digital world, your website is often the first interaction people have with your brand. It should do far more than simply exist online — it should communicate value, build trust, and guide visitors toward meaningful action.
+                My philosophy is simple. I believe that a website should be more than just a digital business card; it should be a powerful tool that actively contributes to your business's success and growth.
               </p>
               <p>
-                Unfortunately, many businesses approach web design the wrong way. They treat it as an art project, focusing only on colors and visual trends while ignoring the real purpose of a website: turning visitors into customers.
-              </p>
-              <p className="font-bold text-zinc-950">My philosophy is simple.</p>
-              <p>
-                A successful website begins with strategy. Design should support that strategy, and development should bring it to life with speed, performance, and reliability.
+                A successful website begins with strategy. Design should support that strategy, and development should bring it to life with speed, performance, and reliability. This means understanding your unique value proposition and translating it into a digital experience that resonates with your audience.
               </p>
               <p>
-                That’s why I combine strategic thinking, modern development practices, and conversion-focused design to create websites that don’t just look impressive but are built to perform. Every section is intentional, every interaction has a purpose, and every line of code contributes to a smoother and more effective user experience.
+                That’s why I combine strategic thinking, modern development practices, and conversion-focused design to create websites that don’t just look impressive but are built to perform. Every section is intentional, every interaction has a purpose, and every line of code contributes to a smoother and more effective user experience. I am committed to delivering excellence in every project, ensuring that your digital presence is a true reflection of your brand's quality and ambition.
               </p>
               <p>
-                For me, web design is not just about aesthetics. It is about building high-performing digital foundations that help businesses grow and convert attention into real opportunities.
+                For me, web design is not just about aesthetics. It is about building high-performing digital foundations that help businesses grow and convert attention into real opportunities. I take pride in my ability to blend creativity with technical precision, resulting in websites that are as functional as they are beautiful.
               </p>
             </div>
           </motion.div>

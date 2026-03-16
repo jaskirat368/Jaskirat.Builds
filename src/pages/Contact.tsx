@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight, ArrowUpRight, Mail, Instagram, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export default function Contact() {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
