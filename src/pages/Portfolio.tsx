@@ -6,6 +6,23 @@ import SpotlightCard from '../components/SpotlightCard';
 export default function Portfolio() {
   const projects = [
     {
+      id: 4,
+      title: 'Gill Architects — Architecture Website',
+      category: 'Architecture Studio Website',
+      desc: 'A premium architecture website designed to showcase residential and commercial projects, build credibility, attract higher-value clients, and establish a strong digital presence across Punjab.',
+      image: 'https://i.ibb.co/mVqjmywr/IMG-20260610-161309.jpg',
+      comparison: {
+        before: {
+          items: ['No Professional Website', 'Instagram Only Presence', 'No Online Inquiries'],
+          link: ''
+        },
+        after: {
+          items: ['Premium Architecture Website', 'Project Showcase System', 'Lead Generation Funnel', 'Advanced SEO', 'Fast Performance', 'Mobile Responsive', 'Bonus : Architectural Brand Experience'],
+          link: 'https://gillarchitects.vercel.app/'
+        }
+      }
+    },
+    {
       id: 1,
       title: 'FCG Landscaping — Website Redesign',
       category: 'Landscaping Website',
