@@ -12,6 +12,7 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
 import Legal from './pages/Legal';
+import NotFound from './pages/NotFound';
 import IntroAnimation from './components/IntroAnimation';
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/legal" element={<Legal />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </Router>
