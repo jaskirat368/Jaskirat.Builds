@@ -47,30 +47,6 @@ export default function Home() {
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-zinc-950/10 pointer-events-none" />
-          
-          <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ perspective: "1000px" }}>
-            <div className="absolute top-1/4 left-[10%] opacity-60">
-              <Cube3D size={60} className="border border-white/20 bg-white/5 shadow-[0_0_30px_rgba(255,255,255,0.1)]" />
-            </div>
-
-            <div className="absolute bottom-1/3 right-[10%] opacity-60">
-              <Cube3D size={80} reverse className="border border-white/20 bg-white/5 shadow-[0_0_30px_rgba(255,255,255,0.1)]" />
-            </div>
-
-            <div
-              className="absolute top-[15%] right-[20%] w-32 h-32 border border-white/10 rounded-full animate-spin-slow"
-              style={{ transformStyle: "preserve-3d" }}
-            />
-
-            <div
-              className="absolute bottom-[20%] left-[15%] w-48 h-48 border border-white/5 rounded-full animate-spin-reverse"
-              style={{ transformStyle: "preserve-3d" }}
-            />
-            
-            <div 
-              className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] -z-10 animate-float-glow"
-            />
-          </div>
         </div>
 
         <motion.div
@@ -140,23 +116,9 @@ export default function Home() {
         variants={revealVariants}
         className="relative pt-32 pb-32 px-6 md:px-12 bg-zinc-50 overflow-hidden"
       >
-        {/* Animated background elements */}
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.1, 1],
-            opacity: [0.3, 0.5, 0.3]
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-0 left-1/4 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl pointer-events-none"
-        />
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.4, 0.2]
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-0 right-1/4 w-[30rem] h-[30rem] bg-indigo-200/20 rounded-full blur-3xl pointer-events-none"
-        />
+        {/* Static background elements for performance */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[30rem] h-[30rem] bg-indigo-200/20 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
@@ -177,58 +139,34 @@ export default function Home() {
               { title: 'No Conversion Strategy', desc: 'Missing clear calls-to-action and logical user journeys.' },
               { title: 'No Optimization', desc: 'Ignoring data, analytics, and iterative improvements post-launch.' },
             ].map((item, i) => (
-              <motion.div 
-                key={i} 
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: i * 0.4 }}
-              >
+              <div key={i}>
                 <SpotlightCard className="h-full p-8 bg-white border-zinc-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center relative">
-                      <motion.div 
-                        animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute inset-0 bg-blue-100 rounded-2xl"
-                      />
+                      <div className="absolute inset-0 bg-blue-100 rounded-2xl" />
                       <XIcon className="w-6 h-6 relative z-10" />
                     </div>
-                    <motion.div 
-                      animate={{ opacity: [0.2, 0.8, 0.2] }}
-                      transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: i * 0.3 }}
-                      className="w-2 h-2 rounded-full bg-red-400 shadow-[0_0_8px_rgba(248,113,113,0.8)]"
-                    />
+                    <div className="w-2 h-2 rounded-full bg-red-400 shadow-[0_0_8px_rgba(248,113,113,0.8)]" />
                   </div>
                   <h3 className="text-xl font-bold text-zinc-950 mb-3">{item.title}</h3>
                   <p className="text-zinc-600 leading-relaxed">{item.desc}</p>
                 </SpotlightCard>
-              </motion.div>
+              </div>
             ))}
             
-            <motion.div 
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 5 * 0.4 }}
-              className="relative bg-zinc-950 p-8 rounded-3xl shadow-xl border border-zinc-800 flex flex-col justify-center items-start overflow-hidden group"
-            >
+            <div className="relative bg-zinc-950 p-8 rounded-3xl shadow-xl border border-zinc-800 flex flex-col justify-center items-start overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 to-zinc-950 z-0" />
-              <motion.div 
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute -top-24 -right-24 w-48 h-48 bg-blue-600/20 blur-3xl rounded-full"
-              />
-              <motion.div 
-                animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="absolute -bottom-24 -left-24 w-48 h-48 bg-indigo-600/20 blur-3xl rounded-full"
-              />
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-600/20 blur-3xl rounded-full" />
+              <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-indigo-600/20 blur-3xl rounded-full" />
               <h3 className="text-2xl font-bold text-white mb-4 relative z-10">I build the solution.</h3>
               <p className="text-zinc-400 mb-6 relative z-10">Strategic architecture designed specifically for your business goals.</p>
               <Link to="/contact" className="relative z-10 text-blue-400 font-semibold flex items-center gap-2 hover:text-blue-300 transition-colors group-hover:translate-x-2 duration-300">
                 Let's fix your site 
-                <motion.span animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}>
+                <span>
                   <ArrowRight className="w-4 h-4" />
-                </motion.span>
+                </span>
               </Link>
-            </motion.div>
+            </div>
           </div>
         </div>
       </motion.section>
@@ -372,15 +310,8 @@ export default function Home() {
                   </div>
 
                   <div className={`flex-1 w-full pl-16 md:pl-0 ${i % 2 === 0 ? 'md:pr-24 md:text-right' : 'md:pl-24 md:text-left'}`}>
-                    <motion.div 
-                      animate={{ 
-                        y: [0, -8, 0],
-                        borderColor: ["rgba(39, 39, 42, 0.5)", "rgba(59, 130, 246, 0.4)", "rgba(39, 39, 42, 0.5)"],
-                        backgroundColor: ["rgba(24, 24, 27, 0.4)", "rgba(24, 24, 27, 0.8)", "rgba(24, 24, 27, 0.4)"],
-                        boxShadow: ["0 0 0 rgba(0,0,0,0)", "0 10px 40px -10px rgba(37,99,235,0.2)", "0 0 0 rgba(0,0,0,0)"]
-                      }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
-                      className="relative p-8 rounded-3xl border backdrop-blur-sm overflow-hidden"
+                    <div 
+                      className="relative p-8 rounded-3xl border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm overflow-hidden hover:border-blue-500/40 hover:bg-zinc-900/80 hover:shadow-[0_10px_40px_-10px_rgba(37,99,235,0.2)] hover:-translate-y-2 transition-all duration-500 group"
                     >
                       
                       {/* Animated Gradient Border - Continuous Shimmer */}
@@ -398,19 +329,17 @@ export default function Home() {
                       />
                       
                       <div className={`flex items-center gap-4 mb-4 ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                        <motion.span 
-                          animate={{ scale: [1, 1.1, 1], borderColor: ["rgba(59, 130, 246, 0.2)", "rgba(59, 130, 246, 0.5)", "rgba(59, 130, 246, 0.2)"] }}
-                          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
-                          className="flex items-center justify-center w-12 h-12 text-lg font-bold text-blue-400 bg-blue-500/10 rounded-xl border shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+                        <span 
+                          className="flex items-center justify-center w-12 h-12 text-lg font-bold text-blue-400 bg-blue-500/10 rounded-xl border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.2)] group-hover:scale-110 group-hover:border-blue-500/50 transition-all duration-500"
                         >
                           {item.step}
-                        </motion.span>
+                        </span>
                         <div className={`h-px flex-1 bg-gradient-to-r from-zinc-800 to-transparent ${i % 2 === 0 ? 'bg-gradient-to-l' : ''}`} />
                       </div>
                       
                       <h3 className="text-2xl font-bold text-white mb-3 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">{item.title}</h3>
                       <p className="text-zinc-300 leading-relaxed">{item.desc}</p>
-                    </motion.div>
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -597,14 +526,8 @@ export default function Home() {
               Stop losing customers to a poorly optimized digital presence. Let's build a strategic asset that works for you 24/7.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
-                }}
-                className="w-full sm:w-auto"
+              <div
+                className="w-full sm:w-auto hover:-translate-y-1 transition-transform duration-300"
               >
                 <Link
                   to="/contact"
@@ -612,10 +535,10 @@ export default function Home() {
                 >
                   Book Strategy Call
                 </Link>
-              </motion.div>
+              </div>
               <Link
                 to="/contact"
-                className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/20 text-white rounded-full font-bold hover:bg-white/10 transition-all"
+                className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/20 text-white rounded-full font-bold hover:bg-white/10 hover:-translate-y-1 transition-all duration-300"
               >
                 Request Free Audit
               </Link>
@@ -666,30 +589,4 @@ function Counter({ from, to }: { from: number; to: number }) {
   }, [from, to, inView]);
 
   return <span ref={nodeRef} />;
-}
-
-function Cube3D({ size = 60, className = "", reverse = false }: { size?: number, className?: string, reverse?: boolean }) {
-  const half = size / 2;
-  return (
-    <div
-      style={{ 
-        width: size, 
-        height: size, 
-        transformStyle: "preserve-3d", 
-      }}
-      className={`relative ${reverse ? 'animate-cube-spin-reverse' : 'animate-cube-spin'}`}
-    >
-      {/* Faces */}
-      {[
-        { transform: `translateZ(${half}px)`, filter: 'brightness(1)' }, // Front
-        { transform: `rotateY(180deg) translateZ(${half}px)`, filter: 'brightness(0.6)' }, // Back
-        { transform: `rotateY(90deg) translateZ(${half}px)`, filter: 'brightness(0.8)' }, // Right
-        { transform: `rotateY(-90deg) translateZ(${half}px)`, filter: 'brightness(0.8)' }, // Left
-        { transform: `rotateX(90deg) translateZ(${half}px)`, filter: 'brightness(1.2)' }, // Top
-        { transform: `rotateX(-90deg) translateZ(${half}px)`, filter: 'brightness(0.5)' }, // Bottom
-      ].map((style, i) => (
-        <div key={i} className={`absolute inset-0 ${className}`} style={{ transform: style.transform, filter: style.filter, willChange: 'transform' }} />
-      ))}
-    </div>
-  );
 }

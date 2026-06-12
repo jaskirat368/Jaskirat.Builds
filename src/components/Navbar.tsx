@@ -39,13 +39,13 @@ export default function Navbar() {
     >
       <div
         className={cn(
-          'flex items-center justify-between w-full max-w-6xl px-4 md:px-6 py-3 mx-auto rounded-full transition-all duration-300 group',
+          'flex items-center justify-between w-full max-w-6xl px-4 md:px-6 py-3 mx-auto rounded-full transition-all duration-500 group',
           scrolled
-            ? 'bg-zinc-950/95 backdrop-blur-sm border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]'
-            : 'bg-zinc-950/90 backdrop-blur-sm border border-white/5 shadow-2xl'
+            ? 'bg-zinc-950/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]'
+            : 'bg-zinc-950/60 backdrop-blur-md border border-white/5 shadow-2xl'
         )}
       >
-        <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+        <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl" />
 
         <Link to="/" className="text-lg md:text-xl font-bold tracking-tight text-white flex items-center gap-2 z-50">
           <span>JASKIRAT<span className="text-blue-500">.</span>BUILDS</span>
@@ -115,7 +115,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute top-20 left-4 right-4 bg-zinc-950/98 backdrop-blur-md border border-white/10 shadow-2xl rounded-3xl p-6 flex flex-col gap-2 lg:hidden overflow-hidden"
+            className="absolute top-20 left-4 right-4 bg-zinc-950/90 backdrop-blur-2xl border border-white/10 shadow-2xl rounded-3xl p-6 flex flex-col gap-2 lg:hidden overflow-hidden"
           >
             {navLinks.map((link, i) => {
               const isActive = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
