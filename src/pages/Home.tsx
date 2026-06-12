@@ -57,24 +57,18 @@ export default function Home() {
               <Cube3D size={80} reverse className="border border-white/20 bg-white/5 shadow-[0_0_30px_rgba(255,255,255,0.1)]" />
             </div>
 
-            <motion.div
-              animate={{ rotateX: [0, 360], rotateY: [0, 180] }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="absolute top-[15%] right-[20%] w-32 h-32 border border-white/10 rounded-full"
+            <div
+              className="absolute top-[15%] right-[20%] w-32 h-32 border border-white/10 rounded-full animate-spin-slow"
               style={{ transformStyle: "preserve-3d" }}
             />
 
-            <motion.div
-              animate={{ rotateX: [0, -360], rotateY: [0, -180] }}
-              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="absolute bottom-[20%] left-[15%] w-48 h-48 border border-white/5 rounded-full"
+            <div
+              className="absolute bottom-[20%] left-[15%] w-48 h-48 border border-white/5 rounded-full animate-spin-reverse"
               style={{ transformStyle: "preserve-3d" }}
             />
             
-            <motion.div 
-              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] -z-10"
+            <div 
+              className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] -z-10 animate-float-glow"
             />
           </div>
         </div>
@@ -677,30 +671,25 @@ function Counter({ from, to }: { from: number; to: number }) {
 function Cube3D({ size = 60, className = "", reverse = false }: { size?: number, className?: string, reverse?: boolean }) {
   const half = size / 2;
   return (
-    <motion.div
-      animate={{ 
-        rotateX: reverse ? [360, 0] : [0, 360], 
-        rotateY: reverse ? [360, 0] : [0, 360] 
-      }}
-      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+    <div
       style={{ 
         width: size, 
         height: size, 
         transformStyle: "preserve-3d", 
       }}
-      className="relative"
+      className={`relative ${reverse ? 'animate-cube-spin-reverse' : 'animate-cube-spin'}`}
     >
       {/* Faces */}
       {[
-        { transform: `translateZ(${half}px)` }, // Front
-        { transform: `rotateY(180deg) translateZ(${half}px)` }, // Back
-        { transform: `rotateY(90deg) translateZ(${half}px)` }, // Right
-        { transform: `rotateY(-90deg) translateZ(${half}px)` }, // Left
-        { transform: `rotateX(90deg) translateZ(${half}px)` }, // Top
-        { transform: `rotateX(-90deg) translateZ(${half}px)` }, // Bottom
+        { transform: `translateZ(${half}px)`, filter: 'brightness(1)' }, // Front
+        { transform: `rotateY(180deg) translateZ(${half}px)`, filter: 'brightness(0.6)' }, // Back
+        { transform: `rotateY(90deg) translateZ(${half}px)`, filter: 'brightness(0.8)' }, // Right
+        { transform: `rotateY(-90deg) translateZ(${half}px)`, filter: 'brightness(0.8)' }, // Left
+        { transform: `rotateX(90deg) translateZ(${half}px)`, filter: 'brightness(1.2)' }, // Top
+        { transform: `rotateX(-90deg) translateZ(${half}px)`, filter: 'brightness(0.5)' }, // Bottom
       ].map((style, i) => (
-        <div key={i} className={`absolute inset-0 ${className}`} style={style} />
+        <div key={i} className={`absolute inset-0 ${className}`} style={{ transform: style.transform, filter: style.filter, willChange: 'transform' }} />
       ))}
-    </motion.div>
+    </div>
   );
 }

@@ -17,6 +17,36 @@
     0% { transform: translateY(-100%); }
     100% { transform: translateY(100%); }
   }
+
+  --animate-spin-slow: spin-slow 25s linear infinite;
+  @keyframes spin-slow {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(180deg); }
+  }
+
+  --animate-spin-reverse: spin-reverse 30s linear infinite;
+  @keyframes spin-reverse {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(-360deg) rotateY(-180deg); }
+  }
+
+  --animate-float-glow: float-glow 8s ease-in-out infinite;
+  @keyframes float-glow {
+    0%, 100% { transform: scale(1) translate(-50%, -50%); opacity: 0.3; }
+    50% { transform: scale(1.2) translate(-41.66%, -41.66%); opacity: 0.6; }
+  }
+
+  --animate-cube-spin: cube-spin 20s linear infinite;
+  @keyframes cube-spin {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+  }
+
+  --animate-cube-spin-reverse: cube-spin-reverse 20s linear infinite;
+  @keyframes cube-spin-reverse {
+    from { transform: rotateX(360deg) rotateY(360deg); }
+    to { transform: rotateX(0deg) rotateY(0deg); }
+  }
 }
 
 html {
