@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
-import { Timer, Sparkles, Target } from 'lucide-react';
+import { Rocket, Diamond, TrendingUp } from 'lucide-react';
 
 export default function IntroAnimation({ onComplete }: { onComplete: () => void }) {
   const [exit, setExit] = useState(false);
@@ -78,10 +78,10 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
-        className="absolute top-[18%] left-[5%] md:top-[15%] lg:top-[22%] md:left-[20%] lg:left-[26%] z-10 flex items-center gap-2 md:gap-3 bg-white px-3 py-2 md:px-4 md:py-3 rounded-2xl shadow-[0_10px_40px_-10px_rgba(255,255,255,0.2)] scale-[0.85] md:scale-100 origin-top-left"
+        className="absolute top-[18%] left-[2%] sm:left-[5%] md:top-[18%] lg:top-[22%] md:left-[15%] lg:left-[22%] z-10 flex items-center gap-2 md:gap-3 bg-white px-3 py-2 md:px-4 md:py-3 rounded-2xl shadow-[0_10px_40px_-10px_rgba(255,255,255,0.2)] scale-[0.75] md:scale-100 origin-top-left"
       >
         <div className="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-yellow-50 text-yellow-500">
-          <Timer className="w-3 h-3 md:w-4 md:h-4" />
+          <Rocket className="w-3 h-3 md:w-4 md:h-4" />
         </div>
         <div>
           <div className="font-bold text-zinc-900 text-xs md:text-sm leading-tight">0.8s Load Time</div>
@@ -93,14 +93,14 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
-        className="absolute top-[45%] left-[5%] md:top-[55%] lg:top-[50%] md:left-[10%] lg:left-[14%] z-10 hidden sm:flex items-center gap-3 bg-white px-4 py-3 rounded-2xl shadow-[0_10px_40px_-10px_rgba(255,255,255,0.2)]"
+        className="absolute top-[62%] sm:top-[60%] left-[2%] sm:left-[5%] md:top-[65%] lg:top-[65%] md:left-[8%] lg:left-[16%] z-10 flex items-center gap-2 md:gap-3 bg-white px-3 py-2 md:px-4 md:py-3 rounded-2xl shadow-[0_10px_40px_-10px_rgba(255,255,255,0.2)] scale-[0.75] md:scale-100 origin-center"
       >
-        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-50 text-purple-500">
-          <Sparkles className="w-4 h-4" />
+        <div className="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-purple-50 text-purple-500">
+          <Diamond className="w-3 h-3 md:w-4 md:h-4" />
         </div>
         <div>
-          <div className="font-bold text-zinc-900 text-sm leading-tight">Pixel Perfect</div>
-          <div className="text-[9px] font-mono tracking-wider text-zinc-500 uppercase mt-0.5">Elite Design</div>
+          <div className="font-bold text-zinc-900 text-xs md:text-sm leading-tight">Pixel Perfect</div>
+          <div className="text-[8px] md:text-[9px] font-mono tracking-wider text-zinc-500 uppercase mt-0.5">Elite Design</div>
         </div>
       </motion.div>
 
@@ -108,10 +108,10 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.0, duration: 0.8, ease: "easeOut" }}
-        className="absolute bottom-[28%] right-[5%] md:bottom-[25%] lg:bottom-[32%] md:right-[15%] lg:right-[22%] z-10 flex items-center gap-2 md:gap-3 bg-white px-3 py-2 md:px-4 md:py-3 rounded-2xl shadow-[0_10px_40px_-10px_rgba(255,255,255,0.2)] scale-[0.85] md:scale-100 origin-bottom-right"
+        className="absolute bottom-[28%] right-[2%] sm:right-[5%] md:bottom-[25%] lg:bottom-[32%] md:right-[15%] lg:right-[22%] z-10 flex items-center gap-2 md:gap-3 bg-white px-3 py-2 md:px-4 md:py-3 rounded-2xl shadow-[0_10px_40px_-10px_rgba(255,255,255,0.2)] scale-[0.75] md:scale-100 origin-bottom-right"
       >
         <div className="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-cyan-50 text-cyan-500">
-          <Target className="w-3 h-3 md:w-4 md:h-4" />
+          <TrendingUp className="w-3 h-3 md:w-4 md:h-4" />
         </div>
         <div>
           <div className="font-bold text-zinc-900 text-xs md:text-sm leading-tight">SEO Optimized</div>
