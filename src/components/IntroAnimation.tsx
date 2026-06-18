@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
-import { TrendingUp, BarChart2, Users } from 'lucide-react';
+import { Zap, Award, Globe } from 'lucide-react';
 
 export default function IntroAnimation({ onComplete }: { onComplete: () => void }) {
   const [exit, setExit] = useState(false);
@@ -78,14 +78,14 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
-        className="absolute top-[20%] left-[10%] md:left-[20%] z-10 hidden sm:flex items-center gap-3 bg-white px-4 py-3 rounded-2xl shadow-[0_10px_40px_-10px_rgba(255,255,255,0.2)]"
+        className="absolute top-[12%] left-[5%] md:top-[20%] md:left-[15%] lg:left-[20%] z-10 flex items-center gap-2 md:gap-3 bg-white px-3 py-2 md:px-4 md:py-3 rounded-2xl shadow-[0_10px_40px_-10px_rgba(255,255,255,0.2)] scale-[0.8] md:scale-100 origin-top-left"
       >
-        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-red-50 text-red-500">
-          <TrendingUp className="w-4 h-4" />
+        <div className="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-yellow-50 text-yellow-500">
+          <Zap className="w-3 h-3 md:w-4 md:h-4" />
         </div>
         <div>
-          <div className="font-bold text-zinc-900 text-sm leading-tight">4.5x ROAS</div>
-          <div className="text-[9px] font-mono tracking-wider text-zinc-500 uppercase mt-0.5">Campaign Active</div>
+          <div className="font-bold text-zinc-900 text-xs md:text-sm leading-tight">0.8s Load Time</div>
+          <div className="text-[8px] md:text-[9px] font-mono tracking-wider text-zinc-500 uppercase mt-0.5">Lightning Fast</div>
         </div>
       </motion.div>
 
@@ -93,14 +93,14 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
-        className="absolute top-[50%] left-[5%] md:left-[15%] z-10 hidden sm:flex items-center gap-3 bg-white px-4 py-3 rounded-2xl shadow-[0_10px_40px_-10px_rgba(255,255,255,0.2)]"
+        className="absolute top-[45%] left-[5%] md:top-[50%] md:left-[10%] lg:left-[15%] z-10 hidden sm:flex items-center gap-3 bg-white px-4 py-3 rounded-2xl shadow-[0_10px_40px_-10px_rgba(255,255,255,0.2)]"
       >
-        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-50 text-emerald-500">
-          <BarChart2 className="w-4 h-4" />
+        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-50 text-purple-500">
+          <Award className="w-4 h-4" />
         </div>
         <div>
-          <div className="font-bold text-zinc-900 text-sm leading-tight">Lower CAC</div>
-          <div className="text-[9px] font-mono tracking-wider text-zinc-500 uppercase mt-0.5">Cost Optimized</div>
+          <div className="font-bold text-zinc-900 text-sm leading-tight">Pixel Perfect</div>
+          <div className="text-[9px] font-mono tracking-wider text-zinc-500 uppercase mt-0.5">Elite Design</div>
         </div>
       </motion.div>
 
@@ -108,14 +108,14 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.0, duration: 0.8, ease: "easeOut" }}
-        className="absolute bottom-[25%] right-[10%] md:right-[20%] z-10 hidden sm:flex items-center gap-3 bg-white px-4 py-3 rounded-2xl shadow-[0_10px_40px_-10px_rgba(255,255,255,0.2)]"
+        className="absolute bottom-[35%] right-[5%] md:bottom-[30%] md:right-[15%] lg:right-[20%] z-10 flex items-center gap-2 md:gap-3 bg-white px-3 py-2 md:px-4 md:py-3 rounded-2xl shadow-[0_10px_40px_-10px_rgba(255,255,255,0.2)] scale-[0.8] md:scale-100 origin-bottom-right"
       >
-        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 text-blue-500">
-          <Users className="w-4 h-4" />
+        <div className="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full bg-cyan-50 text-cyan-500">
+          <Globe className="w-3 h-3 md:w-4 md:h-4" />
         </div>
         <div>
-          <div className="font-bold text-zinc-900 text-sm leading-tight">100+ Leads</div>
-          <div className="text-[9px] font-mono tracking-wider text-zinc-500 uppercase mt-0.5">Active Funnel</div>
+          <div className="font-bold text-zinc-900 text-xs md:text-sm leading-tight">SEO Optimized</div>
+          <div className="text-[8px] md:text-[9px] font-mono tracking-wider text-zinc-500 uppercase mt-0.5">First Page Ready</div>
         </div>
       </motion.div>
 
