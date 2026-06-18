@@ -6,6 +6,23 @@ import SpotlightCard from '../components/SpotlightCard';
 export default function Portfolio() {
   const projects = [
     {
+      id: 5,
+      title: 'PexelParadox — Agency Website Concept',
+      category: 'Marketing Agency Website',
+      desc: 'A premium marketing agency website built to showcase services, client results, and generate qualified leads through a modern, conversion-focused experience.',
+      image: 'https://i.ibb.co/G4q2FYBG/IMG-20260615-190044.jpg',
+      comparison: {
+        before: {
+          items: ['Outdated template-based website', 'Limited online authority', 'No dedicated lead generation system'],
+          link: ''
+        },
+        after: {
+          items: ['Premium agency website', 'Service & results showcase', 'SEO Optimized', 'Mobile Responsive', 'Fast Performance', 'In-Built Form Inquiry System'],
+          link: 'https://pexelparadox.vercel.app/'
+        }
+      }
+    },
+    {
       id: 4,
       title: 'Gill Architects — Architecture Website',
       category: 'Architecture Studio Website',
