@@ -14,6 +14,7 @@ import Contact from './pages/Contact';
 import Legal from './pages/Legal';
 import NotFound from './pages/NotFound';
 import IntroAnimation from './components/IntroAnimation';
+import FloatingContact from './components/FloatingContact';
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -21,6 +22,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
+      <FloatingContact />
       <AnimatePresence mode="wait">
         {showIntro && (
           <IntroAnimation onComplete={() => setShowIntro(false)} />

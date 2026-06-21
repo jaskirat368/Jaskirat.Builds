@@ -1,6 +1,39 @@
 import { motion } from 'motion/react';
-import { ArrowRight, ArrowUpRight, Mail, Instagram, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Mail, Instagram, CheckCircle, AlertCircle, Loader2, Phone } from 'lucide-react';
 import React, { useState } from 'react';
+import SpotlightCard from '../components/SpotlightCard';
+
+const ContactCard = ({ 
+  title, 
+  link, 
+  linkText, 
+  icon, 
+  colorText, 
+  bgGradient, 
+  iconBg,
+}: any) => (
+  <SpotlightCard className="!bg-white !border-zinc-100 shadow-md hover:shadow-lg transition-all duration-300">
+    <div className="absolute inset-0 z-0 rounded-3xl overflow-hidden pointer-events-none">
+      <div className={`absolute inset-0 bg-gradient-to-br ${bgGradient} to-transparent opacity-50`} />
+    </div>
+    <div className="relative z-10 flex items-center gap-4 p-6">
+      <div className={`w-12 h-12 md:w-14 md:h-14 shrink-0 ${iconBg} rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300 border border-black/5 p-2.5`}>
+        {icon}
+      </div>
+      <div>
+        <h3 className="text-lg md:text-xl font-bold mb-1 text-zinc-950">{title}</h3>
+        <a
+          href={link}
+          target={link.startsWith('http') ? '_blank' : undefined}
+          rel={link.startsWith('http') ? 'noopener noreferrer' : undefined}
+          className={`inline-flex items-center gap-2 ${colorText} font-semibold hover:opacity-80 transition-colors group/link text-sm md:text-base`}
+        >
+          <span className="truncate">{linkText}</span> <ArrowUpRight className="w-4 h-4 shrink-0 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
+        </a>
+      </div>
+    </div>
+  </SpotlightCard>
+);
 
 export default function Contact() {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -31,10 +64,52 @@ export default function Contact() {
     }
   };
 
+  const instaCardProps = {
+    title: "Instagram",
+    link: "https://instagram.com/jaskirat.builds",
+    linkText: "@jaskirat.builds",
+    icon: <Instagram className="w-6 h-6 text-pink-600" />,
+    colorText: "text-pink-600",
+    bgGradient: "from-pink-50",
+    iconBg: "bg-pink-50"
+  };
+
+  const whatsappCardProps = {
+    title: "WhatsApp",
+    link: "https://wa.me/918553502222",
+    linkText: "+91 8553502222",
+    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-full h-full object-contain p-2" />,
+    colorText: "text-[#25D366]",
+    bgGradient: "from-[#25D366]/10",
+    iconBg: "bg-[#25D366]/10"
+  };
+
+  const phoneCardProps = {
+    title: "Phone",
+    link: "tel:+918553502222",
+    linkText: "+91 8553502222",
+    icon: <Phone className="w-5 h-5 text-white fill-white" />,
+    colorText: "text-blue-600",
+    bgGradient: "from-blue-50",
+    iconBg: "bg-blue-600"
+  };
+
+  const emailCardProps = {
+    title: "Email",
+    link: "mailto:jaskiratforbusiness@gmail.com",
+    linkText: "jaskiratforbusiness@gmail.com",
+    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail" className="w-full h-full object-contain p-2" />,
+    colorText: "text-red-500",
+    bgGradient: "from-red-50",
+    iconBg: "bg-red-50"
+  };
+
   return (
     <div className="w-full overflow-hidden pt-32 pb-24 px-6 md:px-12 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+        
+        {/* Left Column (Desktop) */}
+        <div className="w-full lg:w-[calc(50%-3rem)] flex flex-col order-1">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -47,37 +122,28 @@ export default function Contact() {
             <p className="text-xl text-zinc-600 leading-relaxed mb-12">
               Ready to turn your website into a growth engine? Fill out the form or send a direct message to start the conversation.
             </p>
-
-            <div className="space-y-8">
-              <div className="group relative bg-white p-8 rounded-3xl border border-zinc-100 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                {/* Gradient Border Effect - Permanent */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 opacity-10" />
-                <div className="absolute -inset-[1px] bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 rounded-3xl opacity-100 -z-10 blur-sm" />
-                
-                <div className="relative z-10">
-                  <div className="w-14 h-14 bg-gradient-to-tr from-purple-600 via-pink-600 to-orange-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300">
-                    <Instagram className="w-7 h-7" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Fastest Response</h3>
-                  <p className="text-zinc-600 mb-6 text-lg leading-relaxed">DM me the word <span className="font-bold text-zinc-900">"SITE"</span> on Instagram for a free, no-obligation website audit.</p>
-                  <a
-                    href="https://instagram.com/jaskirat.builds"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-pink-600 font-bold hover:text-pink-700 transition-colors group/link text-lg"
-                  >
-                    @jaskirat.builds <ArrowUpRight className="w-5 h-5 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-                  </a>
-                </div>
-              </div>
-            </div>
           </motion.div>
 
+          {/* Desktop Only Cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="hidden lg:flex flex-col gap-4 md:gap-6 mt-4 w-full flex-shrink-0"
+          >
+            <ContactCard {...instaCardProps} />
+            <ContactCard {...whatsappCardProps} />
+            <ContactCard {...phoneCardProps} />
+          </motion.div>
+        </div>
+
+        {/* Right Column (Form & Email) */}
+        <div className="w-full lg:w-[calc(50%-3rem)] flex flex-col gap-6 order-2">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white p-10 md:p-12 rounded-3xl border border-zinc-100 shadow-xl"
+            className="bg-white p-10 md:p-12 rounded-3xl border border-zinc-100 shadow-xl h-fit w-full"
           >
             <h2 className="text-3xl font-bold text-zinc-950 mb-8">Project Inquiry</h2>
             
@@ -185,7 +251,26 @@ export default function Contact() {
               </form>
             )}
           </motion.div>
+
+          {/* Desktop Email Card placed below the Form */}
+          <div className="hidden lg:block w-full">
+             <ContactCard {...emailCardProps} />
+          </div>
         </div>
+
+        {/* Mobile ONLY Cards (Appears below Form on Mobile) */}
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.6, delay: 0.4 }}
+           className="lg:hidden flex flex-col gap-4 w-full mt-4 order-3"
+        >
+           <ContactCard {...instaCardProps} />
+           <ContactCard {...whatsappCardProps} />
+           <ContactCard {...phoneCardProps} />
+           <ContactCard {...emailCardProps} />
+        </motion.div>
+
       </div>
     </div>
   );
