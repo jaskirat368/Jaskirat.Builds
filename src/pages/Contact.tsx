@@ -68,7 +68,7 @@ export default function Contact() {
     title: "Instagram",
     link: "https://instagram.com/jaskirat.builds",
     linkText: "@jaskirat.builds",
-    icon: <Instagram className="w-6 h-6 text-pink-600" />,
+    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" className="w-full h-full object-contain" />,
     colorText: "text-pink-600",
     bgGradient: "from-pink-50",
     iconBg: "bg-pink-50"
@@ -78,7 +78,7 @@ export default function Contact() {
     title: "WhatsApp",
     link: "https://wa.me/918553502222",
     linkText: "+91 8553502222",
-    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-full h-full object-contain p-2" />,
+    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-full h-full object-contain" />,
     colorText: "text-[#25D366]",
     bgGradient: "from-[#25D366]/10",
     iconBg: "bg-[#25D366]/10"
@@ -88,7 +88,7 @@ export default function Contact() {
     title: "Phone",
     link: "tel:+918553502222",
     linkText: "+91 8553502222",
-    icon: <Phone className="w-5 h-5 text-white fill-white" />,
+    icon: <Phone className="w-full h-full text-white fill-white p-1" />,
     colorText: "text-blue-600",
     bgGradient: "from-blue-50",
     iconBg: "bg-blue-600"
@@ -98,7 +98,7 @@ export default function Contact() {
     title: "Email",
     link: "mailto:jaskiratforbusiness@gmail.com",
     linkText: "jaskiratforbusiness@gmail.com",
-    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail" className="w-full h-full object-contain p-2" />,
+    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail" className="w-full h-full object-contain" />,
     colorText: "text-red-500",
     bgGradient: "from-red-50",
     iconBg: "bg-red-50"
@@ -106,10 +106,10 @@ export default function Contact() {
 
   return (
     <div className="w-full overflow-hidden pt-32 pb-24 px-6 md:px-12 bg-white">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 lg:items-stretch items-start">
         
         {/* Left Column (Desktop) */}
-        <div className="w-full lg:w-[calc(50%-3rem)] flex flex-col order-1">
+        <div className="w-full lg:w-[calc(50%-3rem)] flex flex-col order-1 h-full min-h-0 xs:min-h-0 sm:min-h-0 md:min-h-0 flex-1">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -124,16 +124,30 @@ export default function Contact() {
             </p>
           </motion.div>
 
-          {/* Desktop Only Cards */}
+          {/* Desktop Only Cards & CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="hidden lg:flex flex-col gap-4 md:gap-6 mt-4 w-full flex-shrink-0"
+            className="hidden lg:flex flex-col gap-4 md:gap-6 mt-4 w-full flex-shrink-0 relative flex-grow"
           >
-            <ContactCard {...instaCardProps} />
-            <ContactCard {...whatsappCardProps} />
-            <ContactCard {...phoneCardProps} />
+            <div className="flex flex-col gap-4 md:gap-6">
+              <ContactCard {...instaCardProps} />
+              <ContactCard {...whatsappCardProps} />
+              <ContactCard {...phoneCardProps} />
+            </div>
+            
+            {/* CTA Line to fill space */}
+            <div className="mt-auto pt-8 pb-6 px-4 flex flex-col items-center justify-center text-center opacity-80 hover:opacity-100 transition-opacity bg-zinc-50/50 rounded-3xl border border-zinc-100">
+              <h3 className="text-xl font-bold text-zinc-950 mb-2">Prefer to talk it out?</h3>
+              <p className="text-zinc-600 text-sm">
+                Skip the form and let's get straight to how we can scale your business.
+              </p>
+              <a href="tel:+918553502222" className="mt-4 flex items-center gap-2 text-blue-600 font-bold hover:gap-3 transition-all cursor-pointer text-sm">
+                <span>Book a Strategy Call</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </motion.div>
         </div>
 
