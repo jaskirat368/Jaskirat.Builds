@@ -17,7 +17,7 @@ const ContactCard = ({
       <div className={`absolute inset-0 bg-gradient-to-br ${bgGradient} to-transparent opacity-50`} />
     </div>
     <div className="relative z-10 flex items-center gap-4 p-6">
-      <div className={`w-12 h-12 md:w-14 md:h-14 shrink-0 ${iconBg} rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300 border border-black/5 p-2.5`}>
+      <div className={`w-12 h-12 md:w-14 md:h-14 shrink-0 ${iconBg} rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300 border border-black/5 p-1`}>
         {icon}
       </div>
       <div>
@@ -88,7 +88,7 @@ export default function Contact() {
     title: "Phone",
     link: "tel:+918553502222",
     linkText: "+91 8553502222",
-    icon: <Phone className="w-full h-full text-white fill-white p-1" />,
+    icon: <Phone className="w-full h-full text-white fill-white p-1.5" />,
     colorText: "text-blue-600",
     bgGradient: "from-blue-50",
     iconBg: "bg-blue-600"
@@ -157,11 +157,12 @@ export default function Contact() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white p-10 md:p-12 rounded-3xl border border-zinc-100 shadow-xl h-fit w-full"
+            className="w-full h-fit"
           >
-            <h2 className="text-3xl font-bold text-zinc-950 mb-8">Project Inquiry</h2>
-            
-            {formState === 'success' ? (
+            <SpotlightCard className="!bg-white p-10 md:p-12 !border-zinc-100 shadow-xl h-fit w-full flex flex-col relative z-20">
+              <h2 className="text-3xl font-bold text-zinc-950 mb-8">Project Inquiry</h2>
+              
+              {formState === 'success' ? (
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -264,6 +265,7 @@ export default function Contact() {
                 </p>
               </form>
             )}
+            </SpotlightCard>
           </motion.div>
 
           {/* Desktop Email Card placed below the Form */}
