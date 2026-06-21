@@ -38,14 +38,17 @@ export default function Home() {
   return (
     <div className="w-full overflow-hidden">
       <section className="relative min-h-[100vh] flex items-center justify-center pt-32 pb-20 px-6 md:px-12 bg-zinc-950 z-20">
-        {/* Static Background Image */}
+        {/* Animated Background Video */}
         <div className="absolute inset-0 overflow-hidden">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1675330629202-20726eedd8ff?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3JhZGllbnQlMjBiYWNrZ3JvdW5kJTIwYmxhY2t8ZW58MHx8MHx8fDA%3D"
-            alt="Hero Background"
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover opacity-40"
-            referrerPolicy="no-referrer"
-          />
+          >
+            <source src="/hero-background.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-zinc-950/10 pointer-events-none" />
         </div>
 
