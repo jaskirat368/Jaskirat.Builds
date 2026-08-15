@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ExternalLink, ArrowRight } from 'lucide-react';
 import SpotlightCard from '../components/SpotlightCard';
+import { Image } from '../components/Image';
 
 export default function Portfolio() {
   const projects = [
@@ -128,7 +129,7 @@ export default function Portfolio() {
                 <div className={`flex flex-col ${i % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center p-8`}>
                   <div className="w-full lg:w-1/2">
                     <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-zinc-100 border border-zinc-200 shadow-xl relative group">
-                      <img
+                      <Image
                         src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

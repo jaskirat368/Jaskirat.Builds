@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Phone } from 'lucide-react';
+import { Image } from './Image';
 
 export default function FloatingContact() {
   return (
@@ -27,7 +28,7 @@ export default function FloatingContact() {
         whileTap={{ scale: 0.9 }}
         className="w-14 h-14 bg-[#25D366] rounded-full shadow-lg flex items-center justify-center p-2.5 relative group"
       >
-        <img 
+        <Image 
           src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
           alt="WhatsApp" 
           className="w-full h-full object-contain" 
@@ -39,3 +40,4 @@ export default function FloatingContact() {
     </div>
   );
 }
+

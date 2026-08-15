@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, ArrowUpRight, Mail, Instagram, CheckCircle, AlertCircle, Loader2, Phone } from 'lucide-react';
 import React, { useState } from 'react';
 import SpotlightCard from '../components/SpotlightCard';
+import { Image } from '../components/Image';
 
 const ContactCard = ({ 
   title, 
@@ -68,7 +69,7 @@ export default function Contact() {
     title: "Instagram",
     link: "https://instagram.com/jaskirat.builds",
     linkText: "@jaskirat.builds",
-    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" className="w-full h-full object-contain" />,
+    icon: <Image src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" className="w-full h-full object-contain" />,
     colorText: "text-pink-600",
     bgGradient: "from-pink-50",
     iconBg: "bg-pink-50"
@@ -78,7 +79,7 @@ export default function Contact() {
     title: "WhatsApp",
     link: "https://wa.me/918553502222",
     linkText: "+91 8553502222",
-    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-full h-full object-contain" />,
+    icon: <Image src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-full h-full object-contain" />,
     colorText: "text-[#25D366]",
     bgGradient: "from-[#25D366]/10",
     iconBg: "bg-[#25D366]/10"
@@ -98,7 +99,7 @@ export default function Contact() {
     title: "Email",
     link: "mailto:jaskiratforbusiness@gmail.com",
     linkText: "jaskiratforbusiness@gmail.com",
-    icon: <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail" className="w-full h-full object-contain" />,
+    icon: <Image src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail" className="w-full h-full object-contain" />,
     colorText: "text-red-500",
     bgGradient: "from-red-50",
     iconBg: "bg-red-50"
