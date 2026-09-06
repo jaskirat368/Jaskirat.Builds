@@ -58,14 +58,6 @@ export default function Home() {
           initial="hidden"
           animate="visible"
         >
-          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 backdrop-blur-md mb-8 shadow-[0_4px_24px_rgba(37,99,235,0.2)]">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-            </span>
-            <span className="text-xs font-medium text-blue-200 tracking-wide uppercase">Jaskirat - Professional Web Designer / Web Developer</span>
-          </motion.div>
-          
           <motion.h1
             variants={itemVariants}
             className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter text-white leading-[1.05] mb-8"
