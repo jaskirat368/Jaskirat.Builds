@@ -120,49 +120,14 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
       </motion.div>
 
       <div className="relative flex flex-col items-center">
-        <motion.div 
-          className="flex items-baseline gap-1 md:gap-2 text-4xl md:text-7xl font-bold tracking-tighter text-white perspective-[1000px]"
-          initial="hidden"
-          animate="visible"
-        >
-          {/* JASKIRAT */}
-          <div className="flex overflow-hidden">
-            {['J', 'A', 'S', 'K', 'I', 'R', 'A', 'T'].map((char, i) => (
-              <motion.span
-                key={`char-${i}`}
-                custom={i}
-                variants={textVariants}
-                className="inline-block origin-bottom"
-              >
-                {char}
-              </motion.span>
-            ))}
-          </div>
-
-          {/* Dot */}
-          <motion.span
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.0, duration: 0.4, type: 'spring' }}
-            className="text-blue-600"
-          >
-            .
-          </motion.span>
-
-          {/* BUILDS */}
-          <div className="flex overflow-hidden">
-            {['B', 'U', 'I', 'L', 'D', 'S'].map((char, i) => (
-              <motion.span
-                key={`char-2-${i}`}
-                custom={i + 8} // Delay offset
-                variants={textVariants}
-                className="inline-block origin-bottom"
-              >
-                {char}
-              </motion.span>
-            ))}
-          </div>
-        </motion.div>
+        <motion.img
+          src="https://i.ibb.co/1GDVprd2/ba638cf2-feae-4ba7-b3cb-752f79c097d1.png"
+          alt="Jaskirat Builds Logo"
+          className="h-24 md:h-32 lg:h-40 object-contain perspective-[1000px]"
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+        />
         
         {/* Subtle 3D Line */}
         <motion.div

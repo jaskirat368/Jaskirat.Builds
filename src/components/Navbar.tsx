@@ -47,8 +47,16 @@ export default function Navbar() {
       >
         <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl" />
 
-        <Link to="/" className="text-lg md:text-xl font-bold tracking-tight text-white flex items-center gap-2 z-50">
-          <span>JASKIRAT<span className="text-blue-500">.</span>BUILDS</span>
+        <Link 
+          to="/" 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="flex items-center z-50 transition-transform duration-300 hover:scale-105 active:scale-95"
+        >
+          <img 
+            src="https://i.ibb.co/1GDVprd2/ba638cf2-feae-4ba7-b3cb-752f79c097d1.png" 
+            alt="Jaskirat Builds Logo" 
+            className="h-10 md:h-12 lg:h-14 object-contain" 
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
