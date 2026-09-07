@@ -55,7 +55,7 @@ export default function Navbar() {
           <img 
             src="https://i.ibb.co/1GDVprd2/ba638cf2-feae-4ba7-b3cb-752f79c097d1.png" 
             alt="Jaskirat Builds Logo" 
-            className="h-10 md:h-12 lg:h-14 object-contain" 
+            className="h-[50px] object-contain" 
           />
         </Link>
 

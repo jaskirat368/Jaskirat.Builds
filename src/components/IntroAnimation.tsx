@@ -123,18 +123,10 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
         <motion.img
           src="https://i.ibb.co/1GDVprd2/ba638cf2-feae-4ba7-b3cb-752f79c097d1.png"
           alt="Jaskirat Builds Logo"
-          className="h-24 md:h-32 lg:h-40 object-contain perspective-[1000px]"
+          className="h-16 md:h-24 lg:h-32 object-contain perspective-[1000px]"
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-        />
-        
-        {/* Subtle 3D Line */}
-        <motion.div
-          initial={{ width: 0, opacity: 0 }}
-          animate={{ width: '100%', opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
-          className="h-[1px] bg-gradient-to-r from-transparent via-blue-600 to-transparent mt-4 w-full max-w-[200px] md:max-w-[400px]"
         />
       </div>
 
