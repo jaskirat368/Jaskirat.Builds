@@ -6,16 +6,8 @@ export default function Footer() {
     <footer className="bg-zinc-950 text-zinc-400 py-16 px-6 md:px-12 border-t border-zinc-800">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="col-span-1 md:col-span-2">
-          <Link 
-            to="/" 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="mb-6 block transition-transform duration-300 hover:scale-105 active:scale-95 w-fit"
-          >
-            <img 
-              src="https://i.ibb.co/1GDVprd2/ba638cf2-feae-4ba7-b3cb-752f79c097d1.png" 
-              alt="Jaskirat Builds Logo" 
-              className="h-10 md:h-12 object-contain" 
-            />
+          <Link to="/" className="inline-block mb-6 transition-transform hover:scale-105 duration-300 origin-left">
+            <img src="https://i.ibb.co/svM0GMyM/JASKIRAT-BUILDS-transparent.png" alt="Jaskirat Builds Logo" className="h-8 md:h-10 object-contain" />
           </Link>
           <p className="text-sm max-w-sm mt-4 leading-relaxed">
             High-converting websites built for growth. Modern, fast, strategic, and performance-driven digital architecture.

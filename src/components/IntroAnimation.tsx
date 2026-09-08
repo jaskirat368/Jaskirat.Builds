@@ -120,14 +120,18 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
       </motion.div>
 
       <div className="relative flex flex-col items-center">
-        <motion.img
-          src="https://i.ibb.co/1GDVprd2/ba638cf2-feae-4ba7-b3cb-752f79c097d1.png"
-          alt="Jaskirat Builds Logo"
-          className="h-16 md:h-24 lg:h-32 object-contain perspective-[1000px]"
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-        />
+        <motion.div 
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }}
+          className="flex flex-col items-center justify-center"
+        >
+          <img 
+            src="https://i.ibb.co/svM0GMyM/JASKIRAT-BUILDS-transparent.png" 
+            alt="Jaskirat Builds Logo" 
+            className="h-10 md:h-14 lg:h-16 object-contain" 
+          />
+        </motion.div>
       </div>
 
       {/* Loading Bar at the bottom */}
