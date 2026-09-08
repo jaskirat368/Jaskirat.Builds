@@ -62,8 +62,8 @@ export default function SelectedWorkSection() {
         </div>
 
         {/* Side Fade Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-64 lg:w-80 bg-gradient-to-r from-white via-white/80 to-transparent z-30 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-64 lg:w-80 bg-gradient-to-l from-white via-white/80 to-transparent z-30 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-8 md:w-64 lg:w-80 bg-gradient-to-r from-white md:via-white/80 to-transparent z-30 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-8 md:w-64 lg:w-80 bg-gradient-to-l from-white md:via-white/80 to-transparent z-30 pointer-events-none" />
 
         <div className="relative w-full max-w-7xl mx-auto h-full flex justify-center items-center">
           {projects.map((project, index) => {
@@ -123,20 +123,32 @@ export default function SelectedWorkSection() {
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-950/80 pointer-events-none" />
                     
                     {/* Translucent Info Panel */}
-                    <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 w-[90%] max-w-[22rem] md:max-w-[28rem] rounded-2xl bg-zinc-950/90 backdrop-blur-xl border border-white/10 p-5 md:p-6 flex items-center justify-between shadow-2xl transition-transform duration-500 hover:bg-zinc-950 hover:scale-[1.02]">
-                      <div className="flex-1 pr-4">
-                        <h3 className="text-lg md:text-2xl font-bold text-white mb-1.5 tracking-tight line-clamp-1">
+                    <div className="absolute bottom-4 md:bottom-10 left-1/2 -translate-x-1/2 w-[78%] md:w-[90%] max-w-[15.5rem] md:max-w-[28rem] rounded-xl md:rounded-2xl bg-zinc-950/30 md:bg-zinc-950/90 backdrop-blur-md md:backdrop-blur-xl border border-white/20 p-3 md:p-6 flex items-center justify-between gap-2 shadow-2xl transition-transform duration-500 hover:bg-zinc-950/40 md:hover:bg-zinc-950 hover:scale-[1.02]">
+                      <div className="flex-1 pr-2 md:pr-4 overflow-hidden flex flex-col gap-1.5 md:gap-0">
+                        <h3 className="text-[15px] md:text-2xl font-bold text-white mb-0 md:mb-1.5 tracking-tight truncate w-full">
                           {project.title.split('—')[0].trim()}
                         </h3>
-                        <p className="text-zinc-300 text-xs md:text-sm font-medium">
+                        <p className="hidden md:block text-zinc-300 text-sm font-medium">
                           {project.category}
                         </p>
+                        
+                        {/* Mobile 'View Details' - below title */}
+                        <div className="md:hidden">
+                          <Link
+                            to={`/portfolio#project-${project.id}`}
+                            className="inline-block px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white text-[10px] font-semibold backdrop-blur-md border border-white/20 transition-colors whitespace-nowrap"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            View Details
+                          </Link>
+                        </div>
                       </div>
                       
                       <div className="flex items-center gap-2 md:gap-3 shrink-0">
+                        {/* Desktop 'View Details' - inline with arrow */}
                         <Link
                           to={`/portfolio#project-${project.id}`}
-                          className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold backdrop-blur-sm transition-colors"
+                          className="hidden md:inline-flex px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold backdrop-blur-md border border-white/10 transition-colors whitespace-nowrap"
                           onClick={(e) => e.stopPropagation()}
                         >
                           View Details
@@ -146,20 +158,20 @@ export default function SelectedWorkSection() {
                             href={project.comparison.after.link} 
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-8 h-8 md:w-10 md:h-10 shrink-0 rounded-full bg-white text-zinc-950 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:scale-110 transition-all duration-300"
+                            className="w-7 h-7 md:w-10 md:h-10 shrink-0 rounded-full bg-white text-zinc-950 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:scale-110 transition-all duration-300"
                             aria-label={`Visit ${project.title}`}
                             onClick={(e) => e.stopPropagation()}
                           >
-                            <ArrowUpRight className="w-4 h-4 md:w-4 md:h-4" />
+                            <ArrowUpRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
                           </a>
                         ) : (
                           <Link 
                             to={`/portfolio#project-${project.id}`}
-                            className="w-8 h-8 md:w-10 md:h-10 shrink-0 rounded-full bg-white text-zinc-950 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:scale-110 transition-all duration-300"
+                            className="w-7 h-7 md:w-10 md:h-10 shrink-0 rounded-full bg-white text-zinc-950 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:scale-110 transition-all duration-300"
                             aria-label={`View ${project.title}`}
                             onClick={(e) => e.stopPropagation()}
                           >
-                            <ArrowUpRight className="w-4 h-4 md:w-4 md:h-4" />
+                            <ArrowUpRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
                           </Link>
                         )}
                       </div>
