@@ -26,7 +26,7 @@ export default function Portfolio() {
 
         <div className="space-y-32 mb-32">
           {projects.map((project, i) => (
-            <div key={project.id} className="relative">
+            <div key={project.id} id={`project-${project.id}`} className="relative scroll-mt-32">
               {/* Recent Project Badge */}
               {i === 0 && (
                 <div className="absolute -top-4 -left-4 md:-top-5 md:-left-5 z-30 flex items-center gap-2 bg-blue-600 px-4 py-2 rounded-full shadow-xl border border-blue-500">

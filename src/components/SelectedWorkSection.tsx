@@ -123,37 +123,46 @@ export default function SelectedWorkSection() {
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-950/80 pointer-events-none" />
                     
                     {/* Translucent Info Panel */}
-                    <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 rounded-2xl bg-zinc-950/40 backdrop-blur-xl border border-white/10 p-6 md:p-8 flex items-center justify-between shadow-2xl transition-transform duration-500 hover:bg-zinc-950/60">
-                      <div className="flex-1 pr-6">
-                        <h3 className="text-xl md:text-3xl font-bold text-white mb-2 tracking-tight line-clamp-1">
+                    <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 w-[90%] max-w-[22rem] md:max-w-[28rem] rounded-2xl bg-zinc-950/90 backdrop-blur-xl border border-white/10 p-5 md:p-6 flex items-center justify-between shadow-2xl transition-transform duration-500 hover:bg-zinc-950 hover:scale-[1.02]">
+                      <div className="flex-1 pr-4">
+                        <h3 className="text-lg md:text-2xl font-bold text-white mb-1.5 tracking-tight line-clamp-1">
                           {project.title.split('—')[0].trim()}
                         </h3>
-                        <p className="text-zinc-300 text-sm md:text-base font-medium">
+                        <p className="text-zinc-300 text-xs md:text-sm font-medium">
                           {project.category}
                         </p>
                       </div>
                       
-                      {project.comparison?.after?.link ? (
-                        <a 
-                          href={project.comparison.after.link} 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full bg-white text-zinc-950 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:scale-110 transition-all duration-300"
-                          aria-label={`Visit ${project.title}`}
+                      <div className="flex items-center gap-2 md:gap-3 shrink-0">
+                        <Link
+                          to={`/portfolio#project-${project.id}`}
+                          className="px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold backdrop-blur-sm transition-colors"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
-                        </a>
-                      ) : (
-                        <Link 
-                          to="/portfolio" 
-                          className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-full bg-white text-zinc-950 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:scale-110 transition-all duration-300"
-                          aria-label={`View ${project.title}`}
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
+                          View Details
                         </Link>
-                      )}
+                        {project.comparison?.after?.link ? (
+                          <a 
+                            href={project.comparison.after.link} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-8 h-8 md:w-10 md:h-10 shrink-0 rounded-full bg-white text-zinc-950 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:scale-110 transition-all duration-300"
+                            aria-label={`Visit ${project.title}`}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <ArrowUpRight className="w-4 h-4 md:w-4 md:h-4" />
+                          </a>
+                        ) : (
+                          <Link 
+                            to={`/portfolio#project-${project.id}`}
+                            className="w-8 h-8 md:w-10 md:h-10 shrink-0 rounded-full bg-white text-zinc-950 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:scale-110 transition-all duration-300"
+                            aria-label={`View ${project.title}`}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <ArrowUpRight className="w-4 h-4 md:w-4 md:h-4" />
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
