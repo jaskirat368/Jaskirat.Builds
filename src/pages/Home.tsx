@@ -5,6 +5,8 @@ import SpotlightCard from '../components/SpotlightCard';
 import FlipWord from '../components/FlipWord';
 import { ArrowRight, ArrowUpRight, CheckCircle2, BarChart3, Zap, LayoutTemplate, Settings, RefreshCcw, ShoppingCart, Globe, Rocket, Code2 } from 'lucide-react';
 
+import SelectedWorkSection from '../components/SelectedWorkSection';
+
 export default function Home() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -103,68 +105,8 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-b from-zinc-950/0 to-zinc-50 pointer-events-none z-10" />
       </section>
 
-      {/* PROBLEM SECTION */}
-      <motion.section 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={revealVariants}
-        className="relative pt-32 pb-32 px-6 md:px-12 bg-zinc-50 overflow-hidden"
-      >
-        {/* Static background elements for performance */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[30rem] h-[30rem] bg-indigo-200/20 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-950 mb-6">
-              Most Websites Don't Convert. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Here's Why.</span>
-            </h2>
-            <p className="text-lg text-zinc-600">
-              A beautiful website is useless if it doesn't generate revenue. If your current site is underperforming, it's likely suffering from one of these critical flaws.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: 'Poor UX', desc: 'Confusing navigation and friction points that frustrate users and cause them to bounce.' },
-              { title: 'Weak Messaging', desc: 'Failing to clearly articulate value within the first 5 seconds of a visit.' },
-              { title: 'Slow Performance', desc: 'Load times over 3 seconds kill conversion rates before the page even renders.' },
-              { title: 'No Conversion Strategy', desc: 'Missing clear calls-to-action and logical user journeys.' },
-              { title: 'No Optimization', desc: 'Ignoring data, analytics, and iterative improvements post-launch.' },
-            ].map((item, i) => (
-              <div key={i}>
-                <SpotlightCard className="h-full p-8 bg-white border-zinc-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center relative">
-                      <div className="absolute inset-0 bg-blue-100 rounded-2xl" />
-                      <XIcon className="w-6 h-6 relative z-10" />
-                    </div>
-                    <div className="w-2 h-2 rounded-full bg-red-400 shadow-[0_0_8px_rgba(248,113,113,0.8)]" />
-                  </div>
-                  <h3 className="text-xl font-bold text-zinc-950 mb-3">{item.title}</h3>
-                  <p className="text-zinc-600 leading-relaxed">{item.desc}</p>
-                </SpotlightCard>
-              </div>
-            ))}
-            
-            <div className="relative bg-zinc-950 p-8 rounded-3xl shadow-xl border border-zinc-800 flex flex-col justify-center items-start overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 to-zinc-950 z-0" />
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-600/20 blur-3xl rounded-full" />
-              <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-indigo-600/20 blur-3xl rounded-full" />
-              <h3 className="text-2xl font-bold text-white mb-4 relative z-10">I build the solution.</h3>
-              <p className="text-zinc-400 mb-6 relative z-10">Strategic architecture designed specifically for your business goals.</p>
-              <Link to="/contact" className="relative z-10 text-blue-400 font-semibold flex items-center gap-2 hover:text-blue-300 transition-colors group-hover:translate-x-2 duration-300">
-                Let's fix your site 
-                <span>
-                  <ArrowRight className="w-4 h-4" />
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </motion.section>
+      {/* SELECTED WORK SECTION */}
+      <SelectedWorkSection />
 
       {/* SERVICES SNAPSHOT */}
       <motion.section 
@@ -545,25 +487,6 @@ export default function Home() {
   );
 }
 
-function XIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M18 6 6 18" />
-      <path d="m6 6 12 12" />
-    </svg>
-  );
-}
 
 function Counter({ from, to }: { from: number; to: number }) {
   const nodeRef = useRef<HTMLSpanElement>(null);
