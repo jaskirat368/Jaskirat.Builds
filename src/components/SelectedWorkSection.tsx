@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { projects } from '../data/projects';
@@ -41,7 +41,7 @@ export default function SelectedWorkSection() {
       </div>
 
       {/* Carousel Container */}
-      <div className="relative w-full max-w-[100vw] overflow-hidden px-4 md:px-12 flex justify-center items-center h-[500px] md:h-[600px] lg:h-[700px]">
+      <div className="relative w-full max-w-[100vw] overflow-hidden px-4 md:px-12 flex justify-center items-center h-[400px] md:h-[500px] lg:h-[550px]">
         
         {/* Navigation Buttons */}
         <div className="absolute inset-x-4 md:inset-x-12 top-1/2 -translate-y-1/2 flex justify-between z-40 pointer-events-none">
@@ -62,60 +62,57 @@ export default function SelectedWorkSection() {
         </div>
 
         {/* Side Fade Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 lg:w-48 bg-gradient-to-r from-white to-transparent z-30 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 lg:w-48 bg-gradient-to-l from-white to-transparent z-30 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-64 lg:w-80 bg-gradient-to-r from-white via-white/80 to-transparent z-30 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-64 lg:w-80 bg-gradient-to-l from-white via-white/80 to-transparent z-30 pointer-events-none" />
 
         <div className="relative w-full max-w-7xl mx-auto h-full flex justify-center items-center">
-          <AnimatePresence initial={false} custom={direction} mode="popLayout">
-            {projects.map((project, index) => {
-              // Calculate relative position
-              let relativeIndex = (index - activeIndex + projects.length) % projects.length;
-              if (relativeIndex > projects.length / 2) {
-                relativeIndex -= projects.length;
-              }
+          {projects.map((project, index) => {
+            let offset = index - activeIndex;
+            const total = projects.length;
 
-              // Determine visibility and styles based on position
-              const isActive = relativeIndex === 0;
-              const isPrev = relativeIndex === -1;
-              const isNext = relativeIndex === 1;
-              
-              if (!isActive && !isPrev && !isNext) return null;
+            if (offset > Math.floor(total / 2)) offset -= total;
+            if (offset < -Math.floor(total / 2)) offset += total;
 
-              return (
-                <motion.div
-                  key={project.id}
-                  layout
-                  custom={direction}
-                  initial={{ 
-                    opacity: 0, 
-                    x: direction > 0 ? 300 : -300,
-                    scale: 0.8
-                  }}
-                  animate={{ 
-                    opacity: isActive ? 1 : 0.4, 
-                    x: isActive ? 0 : (isNext ? '75%' : '-75%'),
-                    scale: isActive ? 1 : 0.85,
-                    zIndex: isActive ? 20 : 10
-                  }}
-                  exit={{ 
-                    opacity: 0,
-                    x: direction > 0 ? -300 : 300,
-                    scale: 0.8,
-                    zIndex: 0
-                  }}
-                  transition={{ 
-                    type: "spring", 
-                    stiffness: 300, 
-                    damping: 30,
-                    mass: 0.8
-                  }}
-                  className={`absolute top-0 bottom-0 w-full md:w-[85%] lg:w-[75%] max-w-5xl rounded-3xl overflow-hidden shadow-2xl ${isActive ? 'cursor-default' : 'cursor-pointer'}`}
-                  onClick={() => {
-                    if (isPrev) handlePrev();
-                    if (isNext) handleNext();
-                  }}
-                >
-                  <div className="relative w-full h-full group bg-zinc-100">
+            const isActive = offset === 0;
+
+            let xPos = "0%";
+            if (offset === -1) xPos = "-105%";
+            if (offset === 1) xPos = "105%";
+            if (offset <= -2) xPos = "-210%";
+            if (offset >= 2) xPos = "210%";
+
+            let scale = isActive ? 1 : 0.85;
+            if (Math.abs(offset) >= 2) scale = 0.75;
+
+            let opacity = isActive ? 1 : 0.3;
+            if (Math.abs(offset) >= 2) opacity = 0;
+
+            let zIndex = isActive ? 20 : 10;
+            if (Math.abs(offset) >= 2) zIndex = 0;
+
+            return (
+              <motion.div
+                key={project.id}
+                initial={false}
+                animate={{
+                  x: xPos,
+                  scale: scale,
+                  opacity: opacity,
+                  zIndex: zIndex
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 250,
+                  damping: 30,
+                  mass: 1
+                }}
+                className={`absolute top-0 bottom-0 w-[85%] md:w-[65%] lg:w-[55%] max-w-4xl rounded-3xl overflow-hidden shadow-2xl ${isActive ? 'cursor-default' : 'cursor-pointer'}`}
+                onClick={() => {
+                  if (offset === -1) handlePrev();
+                  if (offset === 1) handleNext();
+                }}
+              >
+                <div className="relative w-full h-full group bg-zinc-100">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -162,7 +159,6 @@ export default function SelectedWorkSection() {
                 </motion.div>
               );
             })}
-          </AnimatePresence>
         </div>
       </div>
 
