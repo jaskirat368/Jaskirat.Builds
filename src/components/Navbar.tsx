@@ -21,6 +21,13 @@ export default function Navbar() {
     setIsOpen(false);
   }, [location.pathname]);
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -47,7 +54,7 @@ export default function Navbar() {
       >
         <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl" />
 
-        <Link to="/" className="flex items-center gap-2 z-50 transition-transform hover:scale-105 duration-300">
+        <Link to="/" onClick={handleLogoClick} className="flex items-center gap-2 z-50 transition-transform hover:scale-105 duration-300">
           <img src="https://i.ibb.co/svM0GMyM/JASKIRAT-BUILDS-transparent.png" alt="Jaskirat Builds Logo" className="h-6 md:h-8 object-contain" />
         </Link>
 
@@ -58,6 +65,12 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 to={link.path}
+                onClick={(e) => {
+                  if (location.pathname === link.path) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
                 className={cn(
                   'relative px-4 py-2 text-sm font-medium transition-colors rounded-full',
                   isActive ? 'text-zinc-950' : 'text-zinc-400 hover:text-white'
@@ -128,6 +141,13 @@ export default function Navbar() {
                 >
                   <Link
                     to={link.path}
+                    onClick={(e) => {
+                      if (location.pathname === link.path) {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setIsOpen(false);
+                      }
+                    }}
                     className={cn(
                       'block px-4 py-3 text-lg font-medium rounded-2xl transition-all',
                       isActive ? 'bg-white text-zinc-950 shadow-lg' : 'text-zinc-400 hover:bg-white/5 hover:text-white'

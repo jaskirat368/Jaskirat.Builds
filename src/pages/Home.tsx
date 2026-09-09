@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <div className="w-full overflow-hidden">
-      <section className="relative min-h-[100vh] flex items-center justify-center pt-32 pb-20 px-6 md:px-12 bg-zinc-950 z-20">
+      <section id="hero-section" className="relative min-h-[100vh] flex items-center justify-center pt-32 pb-20 px-6 md:px-12 bg-zinc-950 z-20">
         {/* Animated Background Video */}
         <div className="absolute inset-0 overflow-hidden">
           <video
@@ -120,7 +120,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080801a_1px,transparent_1px),linear-gradient(to_bottom,#8080801a_1px,transparent_1px)] bg-[size:14px_24px]" />
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-10">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8 lg:gap-10">
             <div className="max-w-3xl">
               <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-zinc-950 mb-6">
                 Premium Web Design & <br />
@@ -130,7 +130,7 @@ export default function Home() {
                 From <strong className="text-zinc-900">custom ecommerce websites</strong> to <strong className="text-zinc-900">landing page design</strong>, I deliver comprehensive solutions focused on ROI.
               </p>
             </div>
-            <Link to="/services" className="group flex items-center gap-3 px-6 py-3 rounded-full bg-zinc-950 text-white font-semibold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+            <Link to="/services" className="group inline-flex items-center gap-3 px-6 py-3 rounded-full bg-zinc-950 text-white font-semibold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 self-start lg:self-auto">
               View all services 
               <span className="bg-white/20 p-1 rounded-full group-hover:bg-white/30 transition-colors">
                 <ArrowRight className="w-4 h-4" />

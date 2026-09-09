@@ -2,11 +2,18 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
 export default function Footer() {
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (window.location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-zinc-950 text-zinc-400 py-16 px-6 md:px-12 border-t border-zinc-800">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="col-span-1 md:col-span-2">
-          <Link to="/" className="inline-block mb-6 transition-transform hover:scale-105 duration-300 origin-left">
+          <Link to="/" onClick={handleLogoClick} className="inline-block mb-6 transition-transform hover:scale-105 duration-300 origin-left">
             <img src="https://i.ibb.co/svM0GMyM/JASKIRAT-BUILDS-transparent.png" alt="Jaskirat Builds Logo" className="h-8 md:h-10 object-contain" />
           </Link>
           <p className="text-sm max-w-sm mt-4 leading-relaxed">
